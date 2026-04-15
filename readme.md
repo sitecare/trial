@@ -2,19 +2,19 @@
 
 ## Objective
 
-Update the RSS feeds for two sports publisher websites to comply with Yahoo Sports syndication requirements, while maintaining existing MSN syndication compliance for both sites.
+Update the RSS feeds for a sports publisher website to comply with Yahoo Sports syndication requirements, while maintaining existing MSN syndication compliance.
 
 ## Parameters
 
 - The maximum time limit for this task is 4 hours.
-- Both sites run WordPress and currently publish a standard RSS feed as well as a custom alternate-headline RSS feed (accessible via feed URLs ending in `/alt`).
-- All changes must be applied to both the standard and alternate RSS feeds on both sites.
+- The site runs WordPress and currently publish a standard RSS feed as well as a custom alternate-headline RSS feed (accessible via feed URLs ending in `/alt`).
+- All changes must be applied to both the standard and alternate RSS feeds.
 - Changes must not break existing MSN syndication compliance.
 - Do not modify post content or the post editing interface.
 
 ## Background
 
-The client has two sports publisher websites (referred to here as Site A and Site B) that are being onboarded as Yahoo Sports syndication partners. Both sites also syndicate content to MSN, which has its own RSS formatting requirements already in place.
+The client has a sports publisher website that is being onboarded as Yahoo Sports syndication partners. It also syndicates content to MSN, which has its own RSS formatting requirements already in place.
 
 The current RSS feeds include a custom alternate-headline feature. This allows editors to enter an alternative headline on the post edit screen. A separate RSS feed displays this alternate headline instead of the standard post title. These alternate feed URLs end in `/alt`.
 
@@ -26,7 +26,7 @@ Yahoo has provided initial feedback identifying three issues that must be resolv
 
 ## Deliverables
 
-- Updated RSS feeds for both Site A and Site B that pass Yahoo's RSS validation requirements.
+- Updated the RSS feed that passes Yahoo's RSS validation requirements.
 - Confirmation that existing MSN syndication compliance is unaffected.
 - Project documentation:
   - A link to your fork of the repository.

@@ -1,0 +1,134 @@
+//--------------------------------------------------------------
+//   COLORS
+//    - Primary palette
+//    - Grayscale
+//    - Social Media Colors
+//       - $social-colors() map
+//
+//   ELEMENTS & SKINNING
+//     - General
+//     - Accessibility
+//     - Links
+//-------------------------------------------------------------
+
+// COLORS
+
+// Primary palette
+$color-buttercup: #f4b225;
+$color-abbey: #595c62;
+$color-mako: #3f4147;
+$color-shark: #2c2d31;
+$color-dusk: #1e1e22;
+$color-slate: #2c2c31;
+$color-sand: #f5f6f6;
+$color-mid-gray: #595b61;
+$color-sidebar: #f7f7f7;
+$color-blog-card-shadow: rgba(4, 4, 4, 0.12);
+$color-category-link: #717276;
+$color-athens-grey: #e9ebee;
+$color-black: #000;
+$color-white: #fff;
+$color-grad-1: #3779a3;
+$color-grad-2: #425b6d;
+$color-grad-3: #494a4d;
+
+// Grayscale
+$color-gray: #808080;
+$color-cod-gray: #111;
+$color-mineshaft: #333;
+$color-dove-gray: #666;
+$color-gray-alt: #929292;
+$color-silver-chalice: #aaa;
+$color-silver: #ccc;
+$color-alto: #ddd;
+$color-gallery: #eee;
+$color-whitesmoke: #f1f1f1;
+$color-thunder: #2b262b;
+$color-flint: #6b6461;
+$color-iron: #d9e0e0;
+$color-woodsmoke: #0e0e11;
+$color-french-gray: #c9c9cb;
+$color-arrow-gray: #818383;
+$color-sitelist-gray: #595b62;
+
+// Category Colors
+$color-nba: #e25b00;
+$color-nfl: #000;
+$color-mlb: #006732;
+$color-ncaa: #d10d00;
+$color-nhl: #8bc0eb;
+$color-pop-culture: #deca00;
+
+// $category-colors() map
+$category-colors: (
+	nba: $color-nba,
+	nfl: $color-nfl,
+	mlb: $color-mlb,
+	ncaa: $color-ncaa,
+	nhl: $color-nhl,
+	pop-culture: $color-pop-culture,
+);
+
+// Social Media Colors
+$color-facebook: #3b5998;
+$color-googleplus: #dd4b39;
+$color-instagram: #517fa4;
+$color-linkedin: #007bb6;
+$color-pinterest: #cb2027;
+$color-rss: #f90;
+$color-twitter: #00aced;
+$color-youtube: #b00;
+
+// $social-colors() map
+$social-colors: (
+	facebook: $color-facebook,
+	facebook-square: $color-facebook,
+	googleplus: $color-googleplus,
+	googleplus-square: $color-googleplus,
+	instagram: $color-instagram,
+	instagram-square: $color-instagram,
+	linkedin: $color-linkedin,
+	linkedin-square: $color-linkedin,
+	pinterest: $color-pinterest,
+	pinterest-square: $color-pinterest,
+	rss: $color-rss,
+	rss-square: $color-rss,
+	twitter: $color-twitter,
+	twitter-square: $color-twitter,
+	youtube: $color-youtube,
+	youtube-square: $color-youtube,
+);
+
+// $category-colors() map
+$category-colors: (
+	nba: $color-nba,
+	nfl: $color-nfl,
+	mlb: $color-mlb,
+	ncaa: $color-ncaa,
+	nhl: $color-nhl,
+	pop-culture: $color-pop-culture,
+	culture: $color-pop-culture,
+);
+
+// ELEMENTS & SKINNING
+
+// General
+$color-background-body: $color-white;
+$color-text-main: $color-shark;
+$color-background-hr: $color-silver;
+$color-border-abbr: $color-dove-gray;
+
+// Accessibility
+$color-background-screen-reader: $color-whitesmoke;
+$color-text-screen-reader: $color-dusk;
+
+// Links
+$color-link: $color-shark;
+$color-link-visited: $color-shark;
+$color-link-hover: $color-buttercup;
+
+// Buttons
+$color-corn: #edbc00;
+$color-saffron-mango: #f7cf48;
+$color-ship-gray: #3f3c42;
+$color-scarpa-flow: #57545b;

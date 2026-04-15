@@ -1,0 +1,43 @@
+//--------------------------------------------------------------
+// Widgets
+//--------------------------------------------------------------
+
+.widget {
+	margin: 0 0 rem(24);
+
+	// Make sure select elements fit in widgets.
+	select {
+		max-width: 100%;
+	} // select
+} // .widget
+
+// Search widget.
+.widget_search .search-submit {
+	display: none;
+} // .widget_search .search-submit
+
+// Hide on mobile.
+.hide-in-mobile {
+	display: none;
+
+	@include media($breakpoint-700) {
+		display: block;
+	}
+} // .hide-in-mobile
+
+// Hide on Tablet.
+.hide-in-tablet {
+	@include media($tablet-portrait) {
+		display: none;
+	}
+	@include media($desktop) {
+		display: block;
+	}
+} // .hide-in-tablet
+
+// Hide on Desktop.
+.hide-in-desktop {
+	@include media($desktop) {
+		display: none;
+	}
+} // .hide-in-desktop

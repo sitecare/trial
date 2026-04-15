@@ -1,0 +1,126 @@
+//--------------------------------------------------------------
+// Base Layout
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Wrap class.
+//-----------------------------------------
+.wrap {
+	@include outer-container;
+
+	padding: 0 2 * $gutter;
+
+	@include media($phone-landscape) {
+		padding: 0 rem(45);
+	}
+
+	@include media($desktop) {
+		max-width: rem(1260);
+		padding: 0;
+	}
+} // .wrap
+
+
+//-----------------------------------------
+// Site Header.
+//-----------------------------------------
+.site-header {
+	padding: 0;
+
+	.wrap {
+		max-width: none;
+
+		@include media($large-desktop) {
+			max-width: rem(1280);
+		}
+	} // .wrap
+} // .site-header
+
+
+//-----------------------------------------
+// Site content.
+//-----------------------------------------
+.site-content {
+	margin: rem(20) auto;
+
+	@include media($desktop) {
+		margin: rem(29) auto rem(53);
+	}
+} // .site-content
+
+
+//-----------------------------------------
+// Primary content area.
+//-----------------------------------------
+.primary {
+	@include fill-parent;
+
+	.site-main {
+		clear: both;
+
+		@include media($tablet-landscape) {
+			margin-right: rem(400); // Matches sidebar -margin.
+			padding-right: rem(28);
+		}
+	}
+
+	@include media($tablet-landscape) {
+		float: left;
+		width: 100%;
+	}
+} // .primary
+
+
+//-----------------------------------------
+// Secondary content area (sidebar)
+//-----------------------------------------
+.secondary {
+	@include fill-parent;
+
+	background: $color-sidebar;
+	margin-bottom: rem(48);
+	margin-top: rem(30);
+	padding: rem(10);
+
+	@include media($phone-landscape) {
+		padding: rem(47) rem(10) rem(21) rem(10);
+	}
+
+	// Make the sidebar fixed width for our Ads.
+	@include media($tablet-landscape) {
+		float: right;
+		margin-left: rem(-400); // matches primary content margin-right.
+		margin-top: 0;
+		max-width: rem(400);
+		min-width: rem(400);
+		padding: 0;
+		width: rem(400);
+	}
+} // .secondary
+
+
+//-----------------------------------------
+// Full width
+//-----------------------------------------
+.full-width {
+	@include position(relative, null 50%);
+
+	margin-left: -50vw;
+	margin-right: -50vw;
+	width: 100vw;
+}
+
+
+//-----------------------------------------
+// Main wrap
+// - The #main is used for the skip link, but the fixed header obscures part of it when you use a link like that
+// and so the entire element needs an adjustment.
+//-----------------------------------------
+#main,
+.site-main {
+
+	@include media($tablet-landscape) {
+		margin-top: rem(-250);
+		padding-top: rem(250);
+	}
+} // #main, .site-main

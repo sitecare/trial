@@ -1,0 +1,31 @@
+//--------------------------------------------------------------
+// Search results page
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Highlight search terms.
+//-----------------------------------------
+.search-term {
+	background-color: $color-buttercup;
+	transition: background 0.18s ease-out;
+
+	a:hover &,
+	a:focus & {
+		background: transparent;
+	} // a:hover &, a:focus &
+} // .search-term
+
+//-----------------------------------------
+// No Search Found Page.
+//-----------------------------------------
+.search-no-results {
+	// The sidebar. Hide it; only simple way of mimicking the 404 page.
+	.secondary {
+		display: none;
+	} // .secondary
+
+	// Extra content below the no-results content.
+	.below-posts {
+		margin-top: rem(40);
+	} // .below-posts
+} // .search-no-results

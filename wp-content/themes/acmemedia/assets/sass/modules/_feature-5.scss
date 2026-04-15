@@ -1,0 +1,277 @@
+//--------------------------------------------------------------
+// Featured Posts in the Feature 5 Grid
+//
+// For individual post styles seen in the grid, refer to featured.scss
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Grid Styles for Feature 5 Section
+//
+// Thought about using a Sass loop since each
+// item is numbered, but thought it would be
+// overkill and take more time than worth.
+// May refactor towards end of project if time allows.
+//-----------------------------------------
+.feature-5-grid {
+	@include outer-container;
+
+	margin-top: rem(18);
+	max-width: 100%;
+	width: 100%;
+
+	@include media($tablet-landscape) {
+		margin-top: rem(25);
+	}
+
+	// Generic class applied to all grid items.
+	// Takes up full screen width on mobile.
+	.grid-item {
+		@include fill-parent;
+
+		overflow: hidden;
+
+		@include media($phone-portrait) {
+			@include span-columns(6);
+		}
+
+	} // .grid-item
+
+	// Upper left post.
+	.grid-slot-1 {
+		// Top two posts in grid need to be taller.
+		.featured-post {
+			@include media($tablet-large) {
+				height: rem(560);
+			}
+		} // .featured-post
+
+		@include media($phone-portrait) {
+			width: 100%;
+		}
+
+		@include media($tablet-large) {
+			@include span-columns(6.55);
+
+			margin-right: 1.9%;
+		}
+
+		@include media($desktop) {
+			@include span-columns(6.7);
+
+			margin-right: 1.374%;
+		}
+
+		@include media($breakpoint-1600) {
+			@include span-columns(6.75);
+
+			margin-right: 1.5%;
+		}
+
+		@include media($large-desktop) {
+			@include span-columns(6.7);
+
+			margin-right: 1.374%;
+		}
+	} // .grid-slot-1
+
+	// Upper right post.
+	.grid-slot-2 {
+		// Top two posts in grid need to be taller.
+		.featured-post {
+			@include media($tablet-large) {
+				height: rem(560);
+			}
+		} // .featured-post
+
+		@include media($tablet-large) {
+			@include span-columns(5.367);
+
+			margin-right: 0;
+		}
+
+		@include media($desktop) {
+			@include span-columns(5.28);
+
+			margin-right: 0;
+		}
+
+		@include media($breakpoint-1600) {
+			@include span-columns(5.215);
+
+			margin-right: 0;
+		}
+
+		@include media($large-desktop) {
+			@include span-columns(5.28);
+
+			margin-right: 0;
+		}
+	} // .grid-slot-2
+
+	// Bottom left post.
+	.grid-slot-3 {
+		@include media($phone-portrait) {
+			margin-right: 0;
+		}
+
+		@include media($tablet-large) {
+			@include span-columns(5.1792);
+
+			margin-right: 1.9%;
+		}
+
+		@include media($desktop) {
+			@include span-columns(5.3);
+
+			margin-right: 1.374%;
+		}
+
+		@include media($breakpoint-1600) {
+			@include span-columns(5.25);
+
+			margin-right: 1.5%;
+		}
+
+		@include media($large-desktop) {
+			@include span-columns(5.3);
+
+			margin-right: 1.374%;
+		}
+	} // .grid-slot-3
+
+	// Bottom center post.
+	.grid-slot-4 {
+		@include media($tablet-large) {
+			@include span-columns(3.328);
+
+			margin-right: 1.9%;
+		}
+
+		@include media($desktop) {
+			@include span-columns(3.33);
+
+			margin-right: 1.374%;
+		}
+
+		@include media($breakpoint-1600) {
+			@include span-columns(3.34);
+
+			margin-right: 1.5%;
+		}
+
+		@include media($large-desktop) {
+			@include span-columns(3.33);
+
+			margin-right: 1.374%;
+		}
+	} // .grid-slot-4
+
+	// Bottom right post.
+	.grid-slot-5 {
+		@include media($phone-portrait) {
+			margin-right: 0;
+		}
+
+		@include media($tablet-large) {
+			@include span-columns(3.328);
+
+			margin-right: 0;
+		}
+
+		@include media($desktop) {
+			@include span-columns(3.33);
+
+			margin-right: 0;
+		}
+
+		@include media($breakpoint-1600) {
+			@include span-columns(3.34);
+
+			margin-right: 0;
+		}
+
+		@include media($large-desktop) {
+			@include span-columns(3.33);
+
+			margin-right: 0;
+		}
+	} // .grid-slot-5
+} // .feature-5-grid
+
+
+//-----------------------------------------
+// Hide on mobile toggle
+//-----------------------------------------
+.feature-5-grid {
+
+	&.mobile-disable {
+		display: none;
+
+		@include media($breakpoint-700) {
+			display: block;
+		}
+	} // &.mobile-disable
+
+} // .feature-5-grid
+
+
+//-----------------------------------------
+// Read More link
+//-----------------------------------------
+.feature-5-grid {
+
+	.read-more {
+		display: none;
+
+		@include media($tablet-landscape) {
+			display: block;
+		}
+	} // .read-more
+
+} // .feature-5-grid
+
+
+//-----------------------------------------
+// Font size adjustments
+//-----------------------------------------
+.feature-5-grid {
+
+	.featured-post .entry-header .entry-title {
+		font-size: rem(16);
+
+		@include media($phone-landscape) {
+			font-size: rem(21);
+		}
+
+		@include media($tablet-portrait) {
+			font-size: rem(38);
+		}
+
+	} // .featured-post .entry-header .entry-title
+
+	.entry-meta .category {
+		font-size: rem(16);
+
+		@include media($phone-landscape) {
+			font-size: rem(18);
+		}
+	} // .entry-meta
+
+} // .feature-5-grid
+
+
+//-----------------------------------------
+// Text shadows
+//-----------------------------------------
+.feature-5-grid {
+
+	.entry-title,
+	.entry-meta {
+		text-shadow: rem(1) rem(1) rem(1) $color-black;
+
+		@include media($phone-landscape) {
+			text-shadow: none;
+		}
+	} // .entry-title, .entry-meta
+
+} // .feature-5-grid

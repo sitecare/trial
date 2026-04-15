@@ -1,0 +1,444 @@
+# Copyright (C) 2017 acme
+# This file is distributed under the same license as the acme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: acme\n"
+"Report-Msgid-Bugs-To: https://webdevstudios.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: WebDevStudios <wds@webdevstudios.com>\n"
+"Language-Team: Team <wds@webdevstudios.com>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:18
+msgid "Sorry, this page doesn't exist."
+msgstr ""
+
+#: 404.php:24
+msgid "You asked for %s, but despite our computers looking very hard, we could not find it. What happened?"
+msgstr ""
+
+#: 404.php:29
+msgid "the link you clicked to arrive here has a typo in it"
+msgstr ""
+
+#: 404.php:30
+msgid "or somehow we removed that page, or gave it another name"
+msgstr ""
+
+#: 404.php:31
+msgid "or, quite unlikely for sure, maybe you typed it yourself and there was a little mistake?"
+msgstr ""
+
+#: 404.php:35
+msgid "Perhaps searching can help get you on your way."
+msgstr ""
+
+#: archive.php:22
+msgid "Posts by %s"
+msgstr ""
+
+#: comments.php:31
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40, comments.php:61
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:43, comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:44, comments.php:65
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:78
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:25, functions.php:136
+msgid "Footer"
+msgstr ""
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:77
+msgid "Optional Mobile Menu"
+msgstr ""
+
+#: functions.php:78
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:79
+msgid "Sites Menu"
+msgstr ""
+
+#: functions.php:135
+msgid "Sidebar 1"
+msgstr ""
+
+#: functions.php:137
+msgid "Bottom Featured"
+msgstr ""
+
+#: functions.php:138
+msgid "Page Top Ad Area"
+msgstr ""
+
+#: functions.php:139
+msgid "Between Posts Ad Area"
+msgstr ""
+
+#: functions.php:140
+msgid "Above Posts Ad Area"
+msgstr ""
+
+#: functions.php:141
+msgid "Below Post Content"
+msgstr ""
+
+#: functions.php:149
+msgid "Widget area for %s"
+msgstr ""
+
+#: header.php:26
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer.php:150
+msgid "Social Networks"
+msgstr ""
+
+#: inc/customizer.php:151
+msgid "Please add the URL to your social networks."
+msgstr ""
+
+#: inc/customizer.php:175
+msgid "%s URL"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Footer Customization"
+msgstr ""
+
+#: inc/customizer.php:216
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer.php:217
+msgid "The copyright text will be displayed in the footer. Basic HTML tags allowed."
+msgstr ""
+
+#: inc/customizer.php:270
+msgid "Additional Scripts"
+msgstr ""
+
+#: inc/customizer.php:289
+msgid "Header Scripts"
+msgstr ""
+
+#: inc/customizer.php:290
+msgid "Additional scripts to add to the header. Basic HTML tags are allowed."
+msgstr ""
+
+#: inc/customizer.php:309
+msgid "Footer Scripts"
+msgstr ""
+
+#: inc/customizer.php:310
+msgid "Additional scripts to add to the footer. Basic HTML tags are allowed."
+msgstr ""
+
+#: inc/customizer.php:328
+msgid "TripleLift"
+msgstr ""
+
+#: inc/customizer.php:347
+msgid "Add TripleLift script to archive pages?"
+msgstr ""
+
+#: inc/customizer.php:367
+msgid "Add TripleLift script to single posts?"
+msgstr ""
+
+#: inc/customizer.php:387
+msgid "Archive Page Script URL"
+msgstr ""
+
+#: inc/customizer.php:388
+msgid "Add a script URL for archive pages."
+msgstr ""
+
+#: inc/customizer.php:407
+msgid "Single Post Script URL"
+msgstr ""
+
+#: inc/customizer.php:408
+msgid "Add a script URL for single posts."
+msgstr ""
+
+#: inc/customizer.php:426
+msgid "Analytics"
+msgstr ""
+
+#: inc/customizer.php:445
+msgid "SumoMe ID"
+msgstr ""
+
+#: inc/customizer.php:446
+msgid "Add the SumoMe ID here."
+msgstr ""
+
+#: inc/customizer.php:464
+msgid "Contact Form"
+msgstr ""
+
+#: inc/customizer.php:483
+msgid "Recipient Email Address"
+msgstr ""
+
+#: inc/customizer.php:484
+msgid "Add an email address to be used with the contact form."
+msgstr ""
+
+#: inc/customizer.php:502
+msgid "Post Options"
+msgstr ""
+
+#: inc/customizer.php:521
+msgid "Hide Author Bio on posts?"
+msgstr ""
+
+#: inc/customizer.php:542
+msgid "InPost Content"
+msgstr ""
+
+#: inc/customizer.php:543
+msgid "Add additional content inside a post."
+msgstr ""
+
+#: inc/customizer.php:562
+msgid "Our Sites"
+msgstr ""
+
+#: inc/customizer.php:571
+msgid "Sitelist Title"
+msgstr ""
+
+#: inc/customizer.php:572
+msgid "A heading to be displayed with the sitelist in the footer."
+msgstr ""
+
+#: inc/extras.php:253
+msgid "Twitter"
+msgstr ""
+
+#: inc/feature-article-toggle.php:27
+msgid "Featured in Newsfeed"
+msgstr ""
+
+#: inc/template-tags.php:19, inc/template-tags.php:25
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:27
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:46
+msgctxt "post date"
+msgid "on %s"
+msgstr ""
+
+#: inc/template-tags.php:57
+msgctxt "post author"
+msgid "By %s"
+msgstr ""
+
+#: inc/template-tags.php:74
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:74
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:74
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:81, template-parts/content-page.php:34
+msgid "Edit %s"
+msgstr ""
+
+#: inc/template-tags.php:106
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/template-tags.php:111
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: inc/template-tags.php:185
+msgid "Read More"
+msgstr ""
+
+#: inc/template-tags.php:196
+msgid "Read more..."
+msgstr ""
+
+#: inc/template-tags.php:320
+msgid "Share This"
+msgstr ""
+
+#: inc/template-tags.php:324, inc/template-tags.php:325
+msgid "Share on Twitter"
+msgstr ""
+
+#: inc/template-tags.php:330, inc/template-tags.php:331
+msgid "Share on Facebook"
+msgstr ""
+
+#: inc/template-tags.php:336, inc/template-tags.php:337
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: inc/template-tags.php:360
+msgid "Close menu"
+msgstr ""
+
+#: inc/template-tags.php:401, inc/template-tags.php:402
+msgid "Link to %s"
+msgstr ""
+
+#: inc/template-tags.php:410, inc/template-tags.php:411
+msgid "Link to RSS"
+msgstr ""
+
+#: inc/template-tags.php:841
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:842
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:843
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:951
+msgid "About %s"
+msgstr ""
+
+#: inc/template-tags.php:991
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:997
+msgid "Follow on Twitter"
+msgstr ""
+
+#: inc/template-tags.php:1121
+msgid "View all posts in %s"
+msgstr ""
+
+#: search.php:20
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:11
+msgid "To search this site, enter a search term"
+msgstr ""
+
+#: searchform.php:12
+msgctxt "acme"
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:14
+msgid "Submit search form"
+msgstr ""
+
+#: sidebar.php:16
+msgid "Sidebar"
+msgstr ""
+
+#: single.php:56
+msgid "Show Comments"
+msgstr ""
+
+#: single.php:67, template-parts/content-none.php:39
+msgid "Related Content"
+msgstr ""
+
+#: single.php:79
+msgid "Recent Posts"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:21
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:31
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:18
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/content.php:23
+msgid "Post pagination"
+msgstr ""
+
+#: template-parts/content.php:23
+msgid "Pages: "
+msgstr ""
+
+#: template-patterns.php:69
+msgid "Description"
+msgstr ""
+
+#: template-patterns.php:74
+msgid "Parameters"
+msgstr ""
+
+#: template-patterns.php:81
+msgid "Arguments"
+msgstr ""
+
+#: template-patterns.php:92
+msgid "Usage"
+msgstr ""
+
+#: template-patterns.php:97
+msgid "HTML Output"
+msgstr ""

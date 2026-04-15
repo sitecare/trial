@@ -1,0 +1,216 @@
+//--------------------------------------------------------------
+// SumoMe style adjustments
+// AKA: Holy specificity battles Batman.
+//--------------------------------------------------------------
+
+.site {
+	// Position the icons to the left (This may be a setting in SumoMe).
+	.sumome-share-client-wrapper.sumome-share-client-wrapper-center {
+		margin-bottom: rem(19);
+		text-align: left;
+
+		@include media($tablet-landscape) {
+			margin-bottom: rem(42);
+		}
+	} // .sumome-share-client-wrapper.sumome-share-client-wrapper-center
+} // .site
+
+//-----------------------------------------
+// SumoMe Icon tweaks
+//-----------------------------------------
+.site {
+	.sumome-share-client-wrapper div.sumome-share-client.sumome-share-client-header-center-article .sumome-share-client-share,
+	.sumome-share-client-wrapper div.sumome-share-client.sumome-share-client-bottom-center-article .sumome-share-client-share {
+		@include size(rem(43) rem(43));
+
+		margin-right: rem(32);
+		padding: rem(6);
+
+		@include media($tablet-landscape) {
+			@include size(rem(33) rem(33));
+
+			margin-right: rem(17);
+		}
+
+		&:last-child {
+			margin-right: 0;
+		} // &:last-child
+
+		img {
+			@include size(rem(30) rem(30));
+
+			@include media($tablet-landscape) {
+				@include size(rem(20) rem(20));
+			}
+		} // img
+	} // .sumome-share-client-wrapper div.sumome-share-client.sumome-share-client-header-center-article .sumome-share-client-share,
+		// .sumome-share-client-wrapper div.sumome-share-client.sumome-share-client-bottom-center-article .sumome-share-client-share
+} // .site
+
+
+//-----------------------------------------
+// SumoMe share count text
+//-----------------------------------------
+.site {
+	// Since this thing shares classes with the icons, we need to set its size as well.
+	.sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share.sumome-share-client-share-share {
+		@include size(rem(73) rem(30));
+
+		margin-right: rem(30);
+		padding: 0;
+
+		@include media($tablet-landscape) {
+			@include size(rem(58) rem(30));
+
+			margin-right: rem(20);
+			top: rem(-4);
+		}
+
+		// The actual share count number is wrapped in a strong tag.
+		span,
+		strong {
+			font-family: $font-sans;
+			font-size: rem(24);
+			font-weight: 700;
+
+			@include media($tablet-landscape) {
+				font-size: rem(18);
+			}
+		} // span, strong
+
+		// Adjust the space between the count and the "Shares" text.
+		strong {
+			position: relative;
+			top: rem(-16);
+
+			@include media($tablet-landscape) {
+				top: rem(-10);
+			}
+		} // strong
+	} // .sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share.sumome-share-client-share-share
+} // .site
+
+
+//-----------------------------------------
+// Tweaks specific to the share icons that appear on the bottom of the post
+//-----------------------------------------
+.site {
+	.sumome-share-client-wrapper div.sumome-share-client.sumome-share-client-bottom-center-article {
+		@include media(max-width $tablet-landscape) {
+			margin-bottom: rem(42);
+		}
+	} // .sumome-share-client-wrapper div.sumome-share-client.sumome-share-client-bottom-center-article
+} // .site
+
+
+//-----------------------------------------
+// Tweaks for bar that appears at the bottom on mobile
+// - At 498 and smaller it pulls the share buttons from the content in the DOM
+// and then adds a bar that is fixed to the bottom by default.
+// (the width at which it does this might be influenced by how many icons it needs to displayed, cannot test this)
+//-----------------------------------------
+.site {
+	.sumome-share-client-wrapper.sumome-share-client-wrapper-mobile-bottom-bar {
+		@include media(max-width $breakpoint-498) {
+			bottom: rem(71) !important; // It sets a bottom through inline styles. !important is the only way to override it. :/
+		}
+	} // .sumome-share-client-wrapper.sumome-share-client-wrapper-mobile-bottom-bar
+} // .site
+
+
+//-----------------------------------------
+// Fixed left-side share box
+// - This can be disabled through SumoMe settings, but I don't want to go ahead and do that while the theme is still in dev.
+//-----------------------------------------
+.sumome-share-client-wrapper.sumome-share-client-wrapper-left-page {
+	display: none;
+} // .sumome-share-client-wrapper.sumome-share-client-wrapper-left-page
+
+
+//-----------------------------------------
+// Fix positioning of Twitter button on top bar
+// - This fixes things for IE11, but doesn't break it in other browsers.
+//-----------------------------------------
+#sumome-smartbar-popup .sumome-smartbar-input {
+	height: rem(49);
+
+	iframe[id^='twitter-widget'],
+	iframe.sumome-smartbar-social {
+		height: auto !important;
+		margin: rem(15) auto 0 !important;
+	} // iframe[id^='twitter-widget'], iframe.sumome-smartbar-social
+} // .sumome-smartbar-input
+
+//-----------------------------------------
+// Fix positioning of X on top bar close button
+// - IMPORTANT ALL THE THINGS.
+//-----------------------------------------
+#sumome-smartbar-popup .sumome-smartbar-template-headline .sumome-smartbar-close {
+	@include size(rem(32) rem(32));
+
+	border: rem(4) solid #f45b93 !important;
+	border-radius: 50% !important;
+	right: rem(9) !important;
+	top: rem(9) !important;
+
+	&::before {
+		border: none !important;
+		content: "X" !important;
+		display: block !important;
+		font-size: rem(18) !important;
+		font-weight: 700;
+		height: rem(32) !important;
+		line-height: 1.778 !important; // Inline font size is 30px on this icon.
+		position: relative !important;
+		right: rem(4) !important;
+		top: rem(-4) !important;
+		width: rem(32) !important;
+	} // &::before
+} // #sumome-smartbar-popup .sumome-smartbar-template-headline .sumome-smartbar-close
+
+.sumome-scrollbox-popup.sumome-scrollbox-bottom {
+	@include media(max-width $tablet-landscape) {
+		bottom: rem(70) !important;
+		z-index: 1;
+	}
+} // .sumome-scrollbox-popup.sumome-scrollbox-bottom
+
+
+//-----------------------------------------
+// Hide stray share buttons that may appear on cards, pages
+//-----------------------------------------
+.horizontal-blog-card,
+.page {
+	.sumome-share-client-wrapper {
+		display: none;
+	} // .sumome-share-client-wrapper
+} // .horizontal-blog-card, .page
+
+
+//-----------------------------------------
+// Hide the bars if the height of the screen isn't sufficient to deal with things.
+//-----------------------------------------
+.sumome-scrollbox-popup {
+	@include media(max-height $tablet-portrait) {
+		display: none;
+	}
+} // .sumome-scrollbox-popup
+
+.sumome-smartbar-popup {
+	@include media(max-height $phone-landscape) {
+		display: none;
+	}
+} // .sumome-smartbar-popup
+
+.sumome-share-client-wrapper-mobile-bottom-bar {
+	bottom: rem(70) !important;
+	z-index: 0 !important;
+} // .sumome-share-client-wrapper-mobile-bottom-bar
+
+
+//-----------------------------------------
+// Simple hidden class, used to hide an arbitrary header for SumoMe to hook into.
+//-----------------------------------------
+.hidden {
+	display: none;
+} // .hidden

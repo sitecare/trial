@@ -1,0 +1,247 @@
+//--------------------------------------------------------------
+// Navigation
+//--------------------------------------------------------------
+
+// Links
+a {
+	color: $color-link;
+
+	&:visited {
+		color: $color-link-visited;
+	} // &:visited
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-link-hover;
+	} // &:hover, &:focus, &:active
+} // a
+
+// Default menu (active after a fresh WordPress install)
+.menu {
+	@include list-reset;
+
+	li {
+		margin: 0;
+	} // li
+
+	ul {
+		@include list-reset;
+	} // ul
+
+	&.menu-horizontal {
+
+		li {
+			display: inline-block;
+		} // li
+	} // &.menu-horizontal
+
+	&.menu-vertical {
+
+		li {
+			margin: 0;
+		} // li
+
+		a {
+			border-bottom: rem(1) solid $color-background-hr;
+			padding: rem(10);
+		} // a
+	} // &.menu-vertical
+
+	&.dropdown {
+
+		& .menu-item-has-children {
+
+			& > a {
+				padding-right: rem(29);
+				position: relative;
+
+				&::after {
+					@include position(absolute, 50% rem(5) null null);
+					@include size(rem(11) rem(8));
+
+					background: url("assets/images/svg-icons/nav-arrow.svg") no-repeat;
+					background-size: contain;
+
+					content: "";
+					margin: rem(-4) 0 0 rem(6);
+				} // &::after
+			} // & > a
+
+			// Rotate the arrow right for sub-submenu indicators.
+			.menu-item-has-children a::after {
+				left: rem(2);
+				transform: rotate(90deg);
+			}
+		} // &.menu-item-has-children
+
+		// Sub-menu
+		ul {
+			@include position(absolute, null null null -999em);
+
+			background-color: $color-slate;
+			box-shadow: 0 3px 3px rgba($color-black, 0.2);
+			display: none;
+			float: left;
+			z-index: 99999;
+
+			// Sub-sub menu.
+			ul {
+				left: -999em;
+				top: 0;
+
+				// Sub-sub-sub menu.
+				ul {
+					li {
+						text-align: left;
+					}
+				}
+			} // ul
+
+			// Sub-menu items.
+			li {
+				float: none;
+				text-align: right;
+
+				a {
+					font-size: rem(15);
+					margin: 0;
+				}
+
+				&:hover > ul,
+				&.focus > ul {
+					display: block;
+					right: 100%;
+				} // &:hover > ul, &.focus > ul
+				// Target last dropdown to avoid off-screen sub menus.
+			} // li
+
+			// Sub-menu links.
+			a {
+				@include size(auto auto);
+
+				min-width: rem(200);
+			} // a
+		} // ul
+
+		// Display sub-menu when toggled
+		li:hover > ul,
+		.focus > ul {
+			display: block;
+			left: auto;
+		} // &:hover > ul, .focus > ul
+
+		// Menu items
+		li {
+			float: left;
+		} // li
+	} // &.dropdown
+
+	// Menu hyperlinks
+	a {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		border: none;
+		display: block;
+		letter-spacing: rem(1);
+		text-decoration: none;
+
+		@include media($tablet-landscape) {
+			&:hover {
+				background: $color-buttercup;
+			} // &:hover
+		}
+	} // a
+} // .menu
+
+// Main navigation (after creating a menu in the dashboard)
+.main-navigation {
+	@include size(100% auto);
+
+	clear: both;
+	display: inline-block;
+	float: left;
+	max-width: 80rem;
+	padding: 0;
+
+	@include media($tablet-landscape) {
+		display: inline-block;
+		margin-left: rem(176);
+		width: auto;
+	}
+
+	@include media($desktop) {
+		margin-left: rem(214);
+	}
+
+	@include media($large-desktop) {
+		margin-left: 0;
+	}
+
+	// Menu area
+	ul {
+		display: none;
+	} // ul
+
+	&.toggled ul {
+		display: block;
+	} // &.toggled ul
+
+	a {
+		color: $color-white;
+		font-family: $font-sans;
+		font-size: rem(18);
+		font-style: normal;
+		font-weight: 600;
+		letter-spacing: rem(1.5);
+		padding: rem(22) rem(10) rem(24) rem(10);
+		text-transform: uppercase;
+
+		@include media($tablet-portrait) {
+			font-size: rem(15);
+			padding: rem(17) rem(8) rem(19);
+		}
+
+		@include media($tablet-large) {
+			font-size: rem(18);
+			margin: 0 rem(5);
+			padding-left: rem(8);
+			padding-right: rem(8);
+		}
+	} // a
+
+	& .menu-primary-menu-container > .menu {
+		display: block;
+	} // & .menu-primary-menu-container > .menu
+} // .main-navigation
+
+// Small menu
+.menu-toggle {
+	display: block;
+
+	@include media($phone-landscape) {
+		display: none;
+	}
+} // .menu-toggle
+
+// Navigation on Comment, Post and Posts
+.comment-navigation {
+
+	.site-main & {
+		margin: 0 0 rem(24) 0;
+		overflow: hidden;
+	} // .site-main &
+
+	&.nav-previous {
+		@include size(50% auto);
+
+		float: left;
+	} // &.nav-previous
+
+	&.nav-next {
+		@include size(50% auto);
+
+		float: right;
+		text-align: right;
+	} // &.nav-next
+} // .comment-navigation, .posts-navigation, .post-navigation

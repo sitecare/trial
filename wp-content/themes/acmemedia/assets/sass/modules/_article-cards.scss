@@ -1,0 +1,265 @@
+//--------------------------------------------------------------
+// Article Card Styles
+//
+// These styles are used on all pages for the horizontal blog
+// cards in post feeds and switch to vertical cards on mobile.
+//
+//--------------------------------------------------------------
+
+.horizontal-blog-card {
+	@include outer-container;
+
+	align-items: flex-start;
+	background: $color-sand;
+	border: rem(1) solid $color-blog-card-shadow;
+	border-top: rem(3) solid $color-nfl;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: rem(5);
+	padding-bottom: rem(5);
+	padding-top: rem(5);
+	position: relative;
+
+	@include media($tablet-portrait) {
+		align-items: center;
+		border: none;
+		border-top-width: rem(3);
+		box-shadow: rem(-11.1) rem(10) rem(20) rem(3) $color-blog-card-shadow;
+		display: block;
+		margin-bottom: rem(67);
+		padding-bottom: rem(20);
+		padding-top: 0;
+	}
+
+	@include media($tablet-landscape) {
+		margin-bottom: rem(60);
+	}
+
+	@include media($tablet-large) {
+		min-height: rem(287);
+		padding-bottom: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	} // &:last-child
+
+	&::after {
+		clear: none; // Prevents cards from randomly spilling out of container.
+	} // &::after
+
+	// Reset the category label styles.
+	.cat-links {
+		display: block;
+		margin-bottom: rem(5);
+
+		a {
+			@include margin-padding-reset;
+
+			background: none;
+			color: $color-category-link;
+			display: block;
+			font-size: rem(14);
+			letter-spacing: rem(2);
+			line-height: 1.25;
+
+			@include media($tablet-portrait) {
+				margin-top: rem(9);
+			}
+
+			@include media($tablet-landscape) {
+				margin: rem(15) 0 0 0;
+			}
+		}
+	}
+
+	// This is a wrapper that contains the card text and is also used to add the top border on desktop.
+	.card-contents {
+		flex: 1;
+
+		@include media($tablet-portrait) {
+			padding-right: rem(10);
+		}
+
+		@include media($tablet-large) {
+			border-top: rem(6) solid $color-nfl;
+
+			// Loop through all category colors.
+			@each $category-colors, $color in $category-colors {
+
+				// Change border color based on category.
+				&[class*="#{$category-colors}"] {
+					border-top-color: $color;
+				} // a-#{$category-colors}
+			} // end each loop.
+		} // end each breakpoint.
+	} // .card-contents
+
+	// Contains Entry title/blog title.
+	.card-title {
+		@include blog-card-padding;
+
+		.entry-title {
+			@extend .h3;
+
+			font-size: rem(16);
+			line-height: 1;
+			margin-bottom: rem(16);
+			margin-top: 0;
+
+			@include media($tablet-portrait) {
+				font-size: rem(28);
+			}
+
+			@include media($tablet-large) {
+				line-height: 1.2;
+				margin-bottom: rem(14);
+			}
+
+			a {
+				display: block;
+			} // a
+		} // .entry-title
+	} // .card-title
+
+	// This is the main text of the card.
+	.card-excerpt {
+		@include blog-card-padding;
+
+		display: none;
+		width: auto;
+
+		@include media($tablet-landscape) {
+			display: block;
+		}
+
+		p {
+			font-size: rem(16);
+			line-height: 1.2;
+
+			@include media($tablet-large) {
+				line-height: 1.375;
+			}
+		} // p
+
+		// Hide the excerpt when there is a long title on larger screens.
+		&.long-title {
+
+			@include media($tablet-large) {
+				display: none;
+			}
+
+		} // &.long-title
+	} // .card-excerpt
+
+	// Featured image.
+	.card-image {
+		@include position(relative, null);
+
+		display: block;
+		height: rem(110);
+		margin: 0 rem(5);
+		width: 45%;
+		z-index: 0;
+
+		@include media($tablet-portrait) {
+			border-bottom: rem(6) solid $color-nfl;
+			margin: 0;
+			min-height: rem(314);
+			width: 100%;
+		}
+
+		@include media($tablet-large) {
+			@include span-columns(5.85);
+
+			border: none;
+			margin-right: rem(14);
+			min-height: rem(287);
+		}// end breakpoint
+
+		// Loop through all category colors.
+		@each $category-colors, $color in $category-colors {
+
+			// Set styles on the tags.
+			&[class*="#{$category-colors}"] {
+				border-bottom-color: $color;
+			} // a-#{$category-colors}
+		} // end each loop
+	} // .card-image
+
+	// Byline and post meta info at bottom of card.
+	footer {
+		clear: both;
+		display: none;
+		margin-top: rem(16);
+		padding: 0 rem(8);
+		width: 100%;
+
+		@include media($tablet-portrait) {
+			display: block;
+			padding: 0 0 0 rem(16);
+			width: auto;
+		}
+
+		@include media($tablet-landscape) {
+			margin-top: 0;
+		}
+
+		@include media($tablet-large) {
+			@include position(absolute, null null rem(9) 48.13253%);
+		}
+
+		// The posted on time.
+		.entry-date {
+			margin-right: rem(6);
+			padding-left: rem(5);
+		} // .entry-date
+
+		.byline {
+			@extend .h4;
+
+			display: block;
+			font-size: rem(13);
+			letter-spacing: rem(1.35);
+			margin-top: rem(-14); // Padding on card doesn't work on desktop so we need a little bit of space here and -margin is the cleanest way unfortunately.
+			padding-left: rem(3);
+
+			@include media($tablet-portrait) {
+				font-size: rem(13);
+				padding-left: rem(5);
+			}
+
+			@include media($tablet-large) {
+				padding-left: 0;
+			}
+
+			// The author name which links to their author page.
+			a {
+				border: none;
+				font-style: normal;
+			} // a
+		} // .byline
+
+		// The comment bubble containing number of comments.
+		.comments-number {
+			@include size(rem(30) rem(24));
+
+			background: url("assets/images/svg-icons/comment-bubble.svg") no-repeat;
+			background-size: cover;
+			color: $color-white;
+			display: none;
+			font-family: Helvetica, Arial, sans-serif; // Same font in comps because our 2 fonts didn't quite look great in the comment bubble at small sizes.
+			font-size: rem(13);
+			font-style: normal;
+			font-weight: 300;
+			letter-spacing: rem(1);
+			padding-left: rem(2);
+			text-align: center;
+			transition: opacity 0.18s ease-out;
+
+			@include media($tablet-portrait) {
+				display: inline-block;
+			}
+		} // .comments-number
+	} // footer
+} // .horizontal-blog-card

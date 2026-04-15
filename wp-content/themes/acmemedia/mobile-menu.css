@@ -1,0 +1,33 @@
+@media screen and (min-height: 31.25rem) and (max-width: 63.9375rem) {
+	.site-header {
+	    bottom: auto;
+	    padding-bottom: 0;
+	    position: relative;
+	}	
+}
+.mobile-nav-menu {
+	position: relative;
+	bottom: auto;
+}
+.mobile-nav-menu .mobile-nav {
+	position: relative;
+}
+.admin-bar .mobile-nav-menu {
+	padding-top: 0px;
+}
+.site-header .wrap {
+	padding: 0;
+}
+.mobile-nav-menu-hidden {
+	background: rgb(44, 44, 49);
+	bottom: auto;
+	max-height: none;
+	top: 64px;
+	z-index: 1;
+}
+#mobile-nav-menu .close-mobile-menu {
+	top: 4rem;
+}
+.mobile-menu-more .site-branding {
+	z-index: 101;
+}

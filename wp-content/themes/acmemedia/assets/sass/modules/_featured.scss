@@ -1,0 +1,191 @@
+//--------------------------------------------------------------
+// Featured Posts
+//
+// These are posts that are specifically tagged to be "Featured".
+// They display as an image block with only a title and a category.
+//--------------------------------------------------------------
+.featured-post {
+	background-position: 50% 50%;
+	background-size: cover;
+	display: block;
+	height: rem(185);
+	margin-bottom: rem(5);
+	position: relative;
+	z-index: 1;
+
+	@include media($tablet-portrait) {
+		height: rem(450);
+		margin-bottom: rem(67);
+	}
+
+	@include media($tablet-landscape) {
+		margin-bottom: rem(60);
+	}
+
+	.entry-header {
+		@include position(absolute, null null 0 0);
+
+		color: $color-white;
+		padding: rem(12) rem(15);
+		width: 100%;
+		z-index: 1;
+
+		@include media($tablet-portrait) {
+			padding: rem(25) rem(31) rem(25) rem(27);
+		}
+
+		.entry-title {
+			@include backface-reset;
+			@include transition(transform 0.18s ease-in-out);
+
+			font-size: rem(16);
+			font-style: normal;
+			line-height: 1.25;
+			margin-bottom: 0;
+			margin-top: 0;
+
+			@include media($phone-landscape) {
+				font-size: rem(21);
+				line-height: 1.05;
+			}
+		} // .entry-title
+
+		a {
+			color: $color-white;
+
+			&:focus {
+				border-bottom: rem(2) solid $color-buttercup;
+				outline: none;
+			} // &:focus
+		} // a
+
+		.category {
+			@include backface-reset;
+			@include transition(transform 0.18s ease-in-out);
+
+			display: none;
+			font-family: $font-sans;
+			font-size: rem(18);
+			font-style: normal;
+			font-weight: 700;
+			letter-spacing: rem(2.5);
+			margin: 0;
+			position: relative;
+			text-transform: uppercase;
+
+			@include media($tablet-portrait) {
+				border-bottom: rem(4) solid rgba($color-white, 0.6);
+				display: block;
+				padding-bottom: rem(15);
+			}
+
+			// The colored hilight line.
+			.hilight {
+				@include transition(width 0.18s ease-in-out);
+
+				bottom: rem(-4);
+				display: none;
+				height: rem(4);
+				position: absolute;
+				width: rem(72);
+
+				@include media($tablet-portrait) {
+					display: block;
+				}
+			} // .hilight
+		} // .category
+	} // .entry-header
+
+	.read-more {
+		@include transition(opacity 0.18s ease-in-out, transform 0.18s ease-in-out);
+		@include backface-reset;
+
+		border: none;
+		display: block;
+		font-size: rem(23);
+		opacity: 0;
+	} // .read-more
+
+	// Position before and after pseudos, for gradient and hover backgrounds.
+	&::before,
+	&::after {
+		@include position(absolute, 0 null null 0);
+		@include size(100% 100%);
+
+		content: "";
+	} // &::before &::after
+
+	// Add a gradient background over the featured image,
+	// so that the white text will be readable regardless of what is in said image.
+	&::after {
+		background: rgba($color-thunder, 0.35);
+
+		@include media($tablet-landscape) {
+			background: linear-gradient(rgba($color-thunder, 0) 48%, rgba($color-thunder, 1) 95%, rgba($color-thunder, 1) 96%);
+		}
+	} // &::after
+
+	// Full background overlay, will only be visible on hover.
+	&::before {
+		@include transition(opacity 0.18s ease-in-out);
+
+		background: linear-gradient(to bottom, rgba($color-grad-1, 1) 48%, rgba($color-grad-2, 1) 95%, rgba($color-grad-3, 1) 99%);
+		opacity: 0;
+	} // &::before
+
+	// Featured post hover styles:
+	// - Full background overlay
+	// - Full width on category-specific colour bar
+	&:hover,
+	&:focus {
+		&::before {
+			opacity: 0.5;
+		} // &::before
+
+		.category {
+			transform: translateY(-32px);
+
+			.hilight {
+				width: 100%;
+			} // .hilight
+		} // .category::before
+
+		// Make read more link visible on hover.
+		.read-more {
+			@include transition(width 0.18s ease-in-out);
+
+			border: none;
+			opacity: 1;
+			transform: translateY(-16px);
+			width: rem(127);
+
+			&:hover {
+				opacity: 0.88;
+				width: rem(132);
+			} // &:hover
+
+			&::after {
+				@include position(absolute, 48% rem(5) null null);
+				@include size(rem(11) rem(8));
+
+				background: url("assets/images/svg-icons/nav-arrow.svg") no-repeat;
+				background-size: contain;
+				content: "";
+				transform: rotate(-90deg);
+			} // &::after
+		} // .read-more
+
+		// Move all the text up a little on hover.
+		.entry-title {
+			transform: translateY(-32px);
+		} // .entry-title
+	} // &:hover, &:focus
+
+	.feature-5-grid & {
+		margin-bottom: rem(5);
+
+		@include media($tablet-landscape) {
+			margin-bottom: rem(24);
+		}
+	} // .feature-5-grid &
+} // .featured

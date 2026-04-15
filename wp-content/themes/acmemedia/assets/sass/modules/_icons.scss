@@ -1,0 +1,110 @@
+//--------------------------------------------------------------
+// Icons
+//--------------------------------------------------------------
+
+// Social icons <ul>
+.social-icons {
+	@include clearfix;
+	@include list-reset;
+
+	display: none;
+	padding: rem(6) rem(4) rem(3);
+
+	@include media($tablet-landscape) {
+		@include position(absolute, null 0 null null);
+
+		display: block;
+	}
+
+	@include media($tablet-portrait) {
+		padding: rem(9) rem(15) rem(5);
+	}
+
+	.fixed-header & {
+		@include media($tablet-landscape) {
+			display: none;
+		}
+	} // .fixed-header &
+
+	// Each icon <li>
+	.social-icon {
+		display: inline-block;
+
+		@include media($tablet-portrait) {
+			padding: rem(4);
+		}
+
+		// Loop through all social icons
+		@each $social-color, $color in $social-colors {
+
+			// Set styles on those social icons!
+			.icon-#{$social-color} {
+				@include size(rem(30) rem(30));
+
+				fill: $color-white;
+				padding: rem(6); // Padding to adjust the size to be in-line with the smaller RSS icon.
+
+				@include media($tablet-landscape) {
+					@include size(rem(39) rem(39));
+				}
+
+				.footer-top & {
+					@include size(rem(66) rem(66));
+
+					padding: rem(11); // Padding to adjust the size to be in-line with the smaller RSS icon.
+				} // .footer-top &
+
+				&:hover {
+					fill: $color;
+				} // &:hover
+			} // .icon-#{$social-color}
+		} // end each loop
+
+		// The RSS SVG is different in size and doesn't need this padding.
+		.icon-rss,
+		.footer-top & .icon-rss {
+			padding: 0;
+		} // .icon-rss, .footer-top .icon-rss
+
+		.footer-top & {
+			margin-right: rem(16);
+		} // .footer-top &
+
+		// No margin for the last <li> item
+		&:last-child,
+		.footer-top &:last-child {
+			margin-right: 0;
+		} // &:last-child, .footer-top &:last-child
+
+		// Don't need the border that is set by the global <a> style.
+		a {
+			border-bottom: none;
+			display: block;
+			height: rem(39);
+		} // a
+	} // .social-icon
+} // .social-icons
+
+//-----------------------------------------
+// Inline CSS from arrow icons, colour will probably need to be adjusted eventually.
+//-----------------------------------------
+.icon-left-arrow,
+.icon-right-arrow,
+.icon-nav-arrow {
+	fill: none;
+	stroke: $color-black;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-miterlimit: 10;
+} // .icon-left-arrow, .icon-right-arrow, .icon-nav-arrow
+
+//-----------------------------------------
+// Bars icon that goes with the "More" link on the mobile nav.
+//-----------------------------------------
+.more-icon {
+	@include size(rem(16) rem(17));
+
+	background: url("assets/images/svg-icons/bars.svg") no-repeat;
+	background-size: contain;
+	display: inline-block;
+} // .more-icon

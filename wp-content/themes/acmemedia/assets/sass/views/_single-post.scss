@@ -1,0 +1,276 @@
+//--------------------------------------------------------------
+// Single Post template
+// - Some of these styles will also apply to pages.
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Single Post page wraps
+//-----------------------------------------
+.single,
+.page {
+	.site-content {
+		margin-bottom: rem(65);
+	} // .site-content
+} // .single, .page
+
+
+//-----------------------------------------
+// Post header section
+//-----------------------------------------
+.single,
+.page {
+	.hentry:not(.horizontal-blog-card):not(.featured-post) > .entry-header {
+		margin-bottom: rem(41);
+
+		@include media($tablet-landscape) {
+			margin-bottom: rem(52);
+		}
+	} // .entry-header
+
+	.hentry:not(.horizontal-blog-card):not(.featured-post) > .entry-title {
+		margin-bottom: rem(28);
+		margin-top: rem(39);
+
+		@include media($tablet-landscape) {
+			margin-bottom: rem(26);
+			margin-top: rem(16);
+			width: 95.8%;
+		}
+	} // .entry-title
+} // .single, .page
+
+
+//-----------------------------------------
+// Custom excerpt
+//-----------------------------------------
+.single {
+	.entry-custom-excerpt {
+		color: $color-mid-gray;
+		font-size: rem(18);
+		font-style: italic;
+		margin-bottom: rem(35);
+		margin-left: rem(3);
+		padding-left: rem(11);
+
+		@include media($tablet-landscape) {
+			font-size: rem(24);
+			margin-bottom: rem(70);
+			margin-left: rem(9);
+		}
+
+		&::before {
+			left: rem(-4);
+			width: rem(4);
+
+			@include media($tablet-landscape) {
+				left: rem(-6);
+			}
+		} // &::before
+	} // .entry-custom-excerpt
+} // .single
+
+
+//-----------------------------------------
+// Post meta
+//-----------------------------------------
+.single {
+	.entry-meta {
+		margin-top: rem(20);
+
+		@include media($breakpoint-500) {
+			font-size: rem(22);
+			line-height: 1.35;
+		}
+
+		@include media($tablet-landscape) {
+			font-size: rem(18);
+			line-height: 1.25;
+			margin: rem(30) 0;
+		}
+
+		.cat-links {
+			font-weight: 700;
+			line-height: 1.35;
+			margin: rem(4) rem(15) 0 rem(2);
+
+			@include media($tablet-landscape) {
+				line-height: 1.25;
+				margin-right: rem(16);
+			}
+
+			a {
+				padding: rem(1) rem(20);
+
+				@include media($breakpoint-500) {
+					font-size: rem(22);
+				}
+
+				@include media($tablet-landscape) {
+					font-size: rem(18);
+					padding: rem(1) rem(17);
+				}
+			} // a
+		} // .cat-links
+	} // .entry-meta
+} // .single
+
+
+//-----------------------------------------
+// Post Content
+//-----------------------------------------
+.single .entry-content,
+.page .entry-content {
+
+	@include media($tablet-landscape) {
+		padding-right: rem(65);
+	}
+
+	// Override paragraph styles inside of blockquotes, to fix inheritance issues and mockup deviations.
+	blockquote {
+		margin-bottom: rem(24);
+		margin-top: rem(-5);
+
+		@include media(min-width $breakpoint-500 max-width $tablet-landscape) {
+			margin-bottom: rem(42);
+		}
+
+		@include media($tablet-landscape) {
+			max-width: rem(667);
+		}
+
+		p {
+			font-size: rem(18);
+			line-height: 1.45;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		} // p
+	} // blockquote
+
+	// Twitter embeds, it already sets margins with inline styles which means !important is needed to override them.
+	.twitter-tweet {
+		margin-bottom: rem(35) !important;
+		margin-top: rem(56) !important;
+	} // .twitter-tweet
+
+} // .single .entry-content, .page .entry-content
+
+
+//-----------------------------------------
+// Edit link
+// - Only appears when logged in, pull it to the right
+//-----------------------------------------
+.single {
+	.entry-footer {
+		text-align: right;
+	} // .entry-footer
+} // .single
+
+
+//-----------------------------------------
+// Recent Posts
+//-----------------------------------------
+.single .recent-posts {
+	clear: left;
+
+	@include media($tablet-landscape) {
+		margin-right: rem(400); // Matches sidebar -margin.
+		padding-right: rem(28);
+	}
+
+	.in-river-ads {
+		margin-bottom: rem(33);
+		margin-top: rem(-19);
+	} // .in-river-ads
+
+	&.mobile-only {
+		margin-bottom: rem(61);
+
+		@include media($tablet-portrait) {
+			display: none;
+		}
+	} // &.mobile-only
+
+	&.desktop-only {
+		display: none;
+
+		@include media($tablet-portrait) {
+			display: block;
+		}
+	} // &.desktop-only
+} // .single .recent-posts
+
+
+//-----------------------------------------
+// Tag links
+//-----------------------------------------
+.single .tags-links {
+	@include clearfix;
+
+	display: none;
+	margin-bottom: rem(20);
+	text-align: left;
+
+	@include media($tablet-portrait) {
+		display: block;
+	}
+
+	a {
+		background: $color-gallery;
+		border-bottom: none;
+		display: inline-block;
+		font-size: rem(18);
+		font-style: normal;
+		line-height: 1.35;
+		margin-left: rem(20);
+		margin-top: rem(10);
+		padding: rem(5) rem(10);
+		position: relative;
+
+		&:hover,
+		&:focus {
+			color: $color-white;
+		} // &:hover, &:focus
+
+		&::before {
+			@include position(absolute, rem(14) null null rem(-3));
+			@include size(rem(6));
+
+			background: $color-white;
+			border-radius: 50%;
+			content: "";
+			z-index: 1;
+		} // &::before
+
+		&::after {
+			@include position(absolute, 0 null null rem(-14));
+
+			border-bottom: rem(17) solid transparent;
+			border-right: rem(14) solid $color-gallery;
+			border-top: rem(17) solid transparent;
+			content: "";
+		} // &::after
+	} // a
+
+} // .single .tag-links
+
+
+//-----------------------------------------
+// Featured Image
+//-----------------------------------------
+.single {
+
+	.single-post-featured-image {
+		display: block;
+		margin: 0 (-2 * $gutter);
+		max-width: none;
+		width: calc( 100% + 2.5em );
+
+		@include media($phone-landscape) {
+			margin: 0 auto;
+			max-width: 100%;
+		}
+	} // .single-post-featured-image
+
+} // .single

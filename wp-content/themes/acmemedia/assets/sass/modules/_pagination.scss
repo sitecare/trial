@@ -1,0 +1,90 @@
+//--------------------------------------------------------------
+// Pagination links
+//--------------------------------------------------------------
+
+.posts-navigation {
+	@include media(max-width $tablet-landscape) {
+		margin-bottom: rem(44);
+	}
+} // .posts-navigation
+
+//-----------------------------------------
+// Prev/Next pagination
+//-----------------------------------------
+.nav-links {
+
+	.button {
+		display: block;
+		font-size: rem(24);
+		font-weight: 700;
+		padding: rem(9) rem(13);
+		text-align: center;
+
+		@include media($phone-landscape) {
+			font-size: rem(30);
+		}
+
+		@include media($tablet-portrait) {
+			display: inline-block;
+			font-size: rem(18);
+			text-align: left;
+		}
+	} // .button
+
+	.nav-previous {
+		padding-right: rem(23);
+	} // .nav-previous
+
+	.nav-next {
+		margin-top: rem(20);
+		padding-left: rem(23);
+
+		@include media($tablet-portrait) {
+			float: right;
+			margin-top: 0;
+		}
+	} // .nav-next
+
+} // .nav-links
+
+//-----------------------------------------
+// Prev/Next icons
+//-----------------------------------------
+.nav-links {
+
+	.icon  {
+		@include size(rem(24) rem(16));
+
+		margin-left: rem(15);
+		margin-top: rem(-3);
+		vertical-align: middle;
+
+		@include media(min-width $phone-landscape max-width $tablet-portrait) {
+			@include size(rem(40) rem(36));
+
+			margin-left: rem(18);
+		}
+	} // .icon
+
+	// Flip the arrow on the previous link, so it's a left facing arrow.
+	.nav-previous {
+		.icon {
+			margin-left: 0;
+			margin-right: rem(15);
+			transform: rotate(180deg);
+
+			@include media(min-width $phone-landscape max-width $tablet-portrait) {
+				margin-right: rem(18);
+			}
+		} // .icon
+	} // .nav-previous
+
+	// Ensure the icon turns white when the buttons are hovered.
+	.button:active,
+	.button:hover,
+	.button:focus {
+		svg {
+			fill: $color-white;
+		} // svg
+	} // .button:active, .button:hover, .button:focus
+} // .nav-links

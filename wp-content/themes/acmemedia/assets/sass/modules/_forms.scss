@@ -1,0 +1,250 @@
+//--------------------------------------------------------------
+// Forms
+//--------------------------------------------------------------
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%; // Corrects font size not being inherited in all browsers
+	margin: 0; // Addresses margins set differently in IE6/7, F3/4, S5, Chrome
+	vertical-align: baseline; // Improves appearance and consistency in all browsers
+} // button, input, select, textarea
+
+// Addresses excess padding in IE8/9
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+} // input[type="checkbox"], input[type="radio"]
+
+// Remove the clear x icon in IE
+input[type="text"]::-ms-clear,
+input[type="search"]::-ms-clear {
+	display: none;
+} // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
+
+input[type="search"] {
+	-webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
+	box-sizing: content-box;
+
+	// Corrects inner padding displayed oddly in S5, Chrome on OSX
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	} // &::-webkit-search-decoration
+} // input[type="search"]
+
+// Corrects inner padding and border displayed oddly in FF3/4
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+} // button::-moz-focus-inner, input::-moz-focus-inner
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	appearance: none;
+	border: rem(1) solid $color-input-border;
+	border-radius: $border-radius;
+	color: $color-input-text;
+	font-size: rem(18);
+	line-height: 1.5;
+	padding: $padding-input;
+
+	&:focus {
+		border: rem(2) solid $color-corn;
+		color: $color-input-focus-text;
+		outline-color: $color-corn;
+		padding: rem(11) rem(19) rem(12);
+	} // &:focus
+} // input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea
+
+textarea {
+	@include size(100% auto);
+
+	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
+	vertical-align: top; // Improves readability and alignment in all browsers
+} // textarea
+
+label {
+	color: $color-white;
+	display: block;
+	font-family: $font-sans;
+	font-size: rem(16);
+	font-weight: 500;
+	letter-spacing: rem(2);
+	margin-bottom: rem(8);
+	text-transform: uppercase;
+} // label
+
+select {
+	border-radius: $border-radius;
+	font-size: rem(18);
+	padding: rem(8) rem(22) rem(9);
+
+	&:focus {
+		border: rem(2) solid $color-corn;
+		color: $color-input-focus-text;
+		outline-color: $color-corn;
+		padding: rem(7) rem(21) rem(8);
+	} // &:focus
+} // select
+
+//-----------------------------------------
+// Fancier looking select box
+// See: http://codepen.io/Cheffheid/pen/pNZbVe
+//-----------------------------------------
+
+.fancy-selectbox {
+	@include position(relative);
+
+	background: $color-white;
+	border: rem(1) solid $color-mineshaft;
+	display: inline-block;
+	max-height: rem(54);
+
+	select {
+		@include position(relative);
+		@include size(100% 100%);
+
+		appearance: none;
+		background: transparent;
+		border: none;
+		display: inline-block;
+		padding: rem(11) rem(70) rem(14) rem(22);
+		z-index: 1;
+
+		// Hide the selectbox arrow on IE11 and below.
+		&::-ms-expand {
+			display: none;
+		} // &::-ms-expand
+
+		&:focus {
+			border: rem(2) solid $color-corn;
+			padding: rem(9) rem(68) rem(12) rem(20);
+		} // &:focus
+	}
+
+	svg {
+		@include position(absolute, 50% rem(19) null null);
+		@include size(rem(26) rem(24));
+
+		border-left: rem(1) solid $color-flint;
+		fill: $color-flint;
+		margin-left: rem(15);
+		padding: rem(7) 0 rem(7) rem(15);
+		transform: translateY(-50%);
+		z-index: 0;
+
+	} // svg
+} // .fancy-selectbox
+
+//-----------------------------------------
+// Search form
+//-----------------------------------------
+.search-form {
+	display: flex; // Set flexbox to get rid of space between input and button.
+	position: relative;
+
+	.search-field {
+		border: rem(1) solid $color-iron;
+		border-radius: 0;
+		border-right: none;
+		padding: rem(7) rem(9) rem(6);
+
+		@include media($tablet-landscape) {
+			font-size: rem(16);
+			height: rem(34);
+			padding: rem(1) rem(9);
+		}
+
+		@include media(min-height $breakpoint-500 max-width $tablet-portrait) {
+			width: 50%;
+		}
+
+		// When the header is fixed, adjust the logo in size.
+		@include media(min-height $breakpoint-500 max-width $breakpoint-1023) {
+			font-size: rem(16);
+		}
+
+		&:focus {
+			padding: rem(6) rem(8) rem(5);
+
+			@include media($tablet-landscape) {
+				padding: rem(3) rem(8) rem(3) rem(7);
+			}
+		} // &:focus
+
+		.fixed-header .site-header & {
+
+			@include media($tablet-landscape) {
+				@include position(absolute, null 0 null null);
+				@include size(rem(60) rem(65));
+				@include transition(width 0.18s ease-in-out, background-color 0.18s ease-in-out);
+
+				background: transparent;
+				border-color: transparent;
+				opacity: 0;
+				z-index: 3;
+
+				&:focus,
+				&.not-empty {
+					background: $color-slate;
+					color: $color-white;
+					margin-right: rem(60);
+					opacity: 1;
+					width: rem(290);
+					z-index: 1;
+				} // &:focus, &:not-empty
+			}
+		} // .fixed-header .site-header &
+	} // .search-field
+
+	.fixed-header .site-header & {
+
+		@include media($tablet-landscape) {
+			button {
+				@include size(rem(60) rem(65));
+
+				background-color: $color-woodsmoke;
+				border-color: transparent;
+				padding: 0;
+				z-index: 2;
+
+				svg {
+					fill: $color-white;
+				} // svg
+			} // button
+		}
+	} // .fixed-header .site-header &
+
+	::-webkit-input-placeholder {
+		color: $color-mid-gray;
+		font-style: italic;
+	} // ::-webkit-input-placeholder
+
+	::-moz-placeholder {
+		color: $color-mid-gray;
+		font-style: italic;
+		opacity: 1;
+	} // ::-moz-placeholder
+
+	:-ms-input-placeholder {
+		color: $color-mid-gray;
+		font-style: italic;
+	} // :-ms-input-placeholder
+} // .site-header .search-form

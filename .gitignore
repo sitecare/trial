@@ -1,0 +1,152 @@
+#
+# All instances of THEME_NAME should be replaced with your theme's directory name and PLUGIN_NAME should be replaced with any plugin directory name that should be tracked.
+# Additional path exclusions should be made as needed for each project.
+#
+
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!.gitattributes
+!README.md
+!wp-content/
+
+# Ignore everything in the "wp-content" directory, except the "plugins", "mu-plugins",
+# and "themes" directories.
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# Ignore everything in the "mu-plugins" directory, except the mu-plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+# !wp-content/mu-plugins/my-plugin.php
+wp-content/mu-plugins/*
+
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+# !wp-content/plugins/my-plugin.php
+wp-content/plugins/*
+
+# Ignore everything in the "themes" directory, except the themes you
+# specify (see the commented-out example for a hint on how to do this.)
+# !wp-content/themes/my-theme.php
+wp-content/themes/*
+
+# Do not ignore our custom theme.
+!wp-content/themes/acmemedia/
+wp-content/themes/acmemedia/node_modules
+wp-content/themes/acmemedia/.DS_Store
+
+# Set which plugins that should not be ignored.
+!wp-content/mu-plugins/*
+!wp-content/plugins/custom-rss-feeds/
+!wp-content/plugins/wds-*/
+
+.ftpssh_settings
+.ftpquota
+.DS_Store
+.project
+.buildpath
+.htaccess
+.settings
+.revision
+database.sql
+/*.sql
+.sucuriquarantine
+/sql/
+/robots.txt
+.errordocs/
+
+.qidb/
+php_mail.log
+
+php.ini*
+
+# Backup & Cache #
+wp-config.php
+wp-config-local.php
+wp-config-hosting.php
+wp-config-generated.php
+wp-config-old.php
+db-config.php
+wp-content/advanced-cache.php
+wp-content/.advanced-cache.php
+wp-content/object-cache*
+wp-content/.object-cache*
+wp-content/backup-db/*
+wp-content/backups/
+wp-content/ai1wm-backups/
+wp-content/backup*
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/.cache/
+wp-content/cache-bak/
+wp-content/cache/supercache/*
+wp-content/wp-rocket-config
+wp-content/plugins/category-grid-view-gallery/cache
+wp-content/plugins/wp-rocket/cache.json
+wp-content/upgrade/
+wp-content/uploads/
+/videos/
+wp-content/wp-cache-config.php
+wp-content/canvas/cache/
+wp-config-environment.php
+wp-snapshots/
+wp-content/object-cache.php
+wp-content/managewp
+wp-content/updraft/
+wp-content/wptouch-data/backups/
+wp-content/wptouch-data/cache/
+wp-content/plugins/bwp-google-xml-sitemaps/cache/
+wp-content/plugins/all-in-one-event-calendar/cache/
+wp-content/plugins/justified-image-grid/cache/
+# WordFence #
+wp-content/plugins/wordfence/tmp/
+wp-content/wflogs/
+
+# Logs #
+wc-logs/
+log.txt
+debug.log
+php_errorlog
+errors.log
+error_log
+/cgi-bin
+/stats/
+wp-content/plugins/all-in-one-wp-migration/storage/error.log
+
+# large/disallowed file types
+# a CDN should be used for these
+*.hqx
+*.bin
+*.exe
+*.dll
+*.deb
+*.dmg
+*.iso
+*.img
+*.msi
+*.msp
+*.msm
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+*.mp4
+*.mpeg
+*.mpg
+*.mov
+*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi
+*.zip

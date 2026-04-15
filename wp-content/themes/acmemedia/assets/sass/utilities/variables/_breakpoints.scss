@@ -1,0 +1,27 @@
+//--------------------------------------------------------------
+// Media Query Breakpoints
+//--------------------------------------------------------------
+
+/// Standard Media Query Breakpoints
+/// @group wds
+
+$large-desktop: rem(1680);
+$desktop: rem(1366);
+$tablet-large: rem(1220);
+$tablet-landscape: rem(1024);
+$wp-admin-bar: rem(783);
+$tablet-portrait: rem(768);
+$phone-landscape: rem(640);
+$phone-portrait: rem(360);
+
+// Custom breakpoints
+$breakpoint-498: rem(498);
+$breakpoint-500: rem(500);
+$breakpoint-530: rem(530);
+$breakpoint-670: rem(670);
+$breakpoint-700: rem(700);
+$breakpoint-1023: rem(1023);
+$breakpoint-1072: rem(1072);
+$breakpoint-1124: rem(1124);
+$breakpoint-1330: rem(1330);
+$breakpoint-1600: rem(1600);

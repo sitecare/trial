@@ -1,0 +1,175 @@
+//--------------------------------------------------------------
+// Author boxes
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// General box styles
+//-----------------------------------------
+.author-box {
+	background: $color-sidebar;
+	border-radius: $border-radius;
+	margin-bottom: rem(61);
+	padding: rem(10) rem(22) rem(49);
+	position: relative;
+
+	@include media($tablet-large) {
+		display: flex;
+		margin-bottom: rem(48);
+		max-width: rem(763);
+		padding: rem(10) rem(14) rem(16) rem(16);
+		width: 100%;
+	}
+
+	// Full-width version
+	&.full {
+		@include media($tablet-landscape) {
+			max-width: none;
+		}
+	} // &.full
+} // .author-box
+
+
+//-----------------------------------------
+// Avatar
+//-----------------------------------------
+.author-box .author-avatar {
+	@include size(rem(83) rem(83));
+
+	border-radius: 50%;
+	display: inline-block;
+	margin: rem(2) rem(22) 0 0;
+	vertical-align: top;
+
+	@include media($tablet-landscape) {
+		@include size(rem(73) rem(73));
+
+		margin: rem(2) rem(19) 0 0;
+	}
+} // .author-box .author-avatar
+
+
+//-----------------------------------------
+// Author box title (About [author])
+//-----------------------------------------
+.author-box .author-title {
+	display: inline-block;
+	font-size: rem(22);
+	line-height: 1;
+	margin-bottom: 0;
+	margin-top: rem(17);
+	vertical-align: middle;
+
+	@include media($tablet-landscape) {
+		font-size: rem(28);
+		margin-top: rem(13);
+	}
+} // .author-box .author-title
+
+
+//-----------------------------------------
+// Author bio
+//-----------------------------------------
+.author-box .author-bio {
+	margin: rem(7) 0 rem(27) rem(3);
+
+	@include media($tablet-landscape) {
+		margin: rem(15) 0 rem(25) rem(4);
+		padding-right: rem(20);
+	}
+
+	p {
+		font-size: rem(16);
+
+		@include media($breakpoint-500) {
+			margin-bottom: rem(20);
+		}
+
+		@include media($tablet-landscape) {
+			font-size: rem(18);
+			line-height: 1.55;
+			margin-bottom: rem(30);
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		} // &:last-child
+	} // p
+} // .author-box .author-bio
+
+//-----------------------------------------
+// All Posts link
+//-----------------------------------------
+.author-box .all-posts {
+	border-bottom: none;
+	font-family: $font-sans;
+	font-size: rem(16);
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	@include media($tablet-landscape) {
+		font-size: rem(16);
+		margin-left: rem(4);
+	}
+
+	@include media(min-width $tablet-landscape max-width $tablet-large) {
+		display: block;
+	}
+} // .author-box .all-posts
+
+
+//-----------------------------------------
+// Follow on Twitter link
+//-----------------------------------------
+.author-box {
+	.twitter {
+		border-bottom: none;
+		display: block;
+		font-size: rem(16);
+
+		@include media($phone-landscape) {
+			border-left: rem(1) solid lighten($color-black, 80%);
+			display: inline;
+			margin-left: rem(11);
+			padding-left: rem(16);
+		}
+
+		@include media($tablet-landscape) {
+			font-size: rem(16);
+		}
+
+		@include media(min-width $tablet-landscape max-width $tablet-large) {
+			border-left: none;
+			display: block;
+			margin-left: 0;
+			padding-left: 0;
+		}
+	} // .twitter
+
+	// Remove the left border, margin, and padding if we're displaying on the author archive.
+	&.author .twitter {
+		@include media($phone-landscape) {
+			border-left: none;
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+} // .author-box
+
+//-----------------------------------------
+// Ad box
+//-----------------------------------------
+.author-box .author-ad-box {
+	margin-top: rem(70);
+	max-height: rem(250);
+	text-align: center;
+
+	@include media($tablet-landscape) {
+		min-width: rem(300);
+	}
+
+	@include media($tablet-large) {
+		margin-top: 0;
+		text-align: right;
+	}
+} // .author-box .author-ad-box

@@ -1,0 +1,120 @@
+//--------------------------------------------------------------
+// The Below Posts widget section that appears below single post content
+//--------------------------------------------------------------
+
+
+//-----------------------------------------
+// General widget section styles
+//-----------------------------------------
+.below-posts {
+	@extend .clear;
+
+	@include media($tablet-landscape) {
+		padding-bottom: rem(16);
+	}
+
+	// Reset top margin on first widget's heading
+	.widget:first-of-type .widget-title {
+		margin-top: 0;
+	} // .widget:first-of-type .widget-title
+} // .below-posts
+
+
+//-----------------------------------------
+// More Reading widget
+//-----------------------------------------
+.below-posts .csh-widget {
+
+	@include media($tablet-landscape) {
+		margin-bottom: rem(49);
+	}
+
+	.featured {
+
+		@include media($tablet-large) {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			width: 100%;
+		}
+	} // .featured
+
+	.more-reading-article.featured-post {
+		float: none;
+		margin-bottom: rem(16);
+		margin-right: 0;
+		max-width: none;
+		width: 100%;
+
+		@include media($tablet-large) {
+			@include size(47.5% rem(207));
+
+			margin-bottom: rem(18);
+			max-width: rem(380);
+		}
+
+
+		@include media($breakpoint-1330) {
+			width: 50%;
+		}
+	} // .more-reading-article .featured-post
+} // .below-posts .csh-widget
+
+
+//-----------------------------------------
+// Linkbox widgets
+//-----------------------------------------
+.below-posts .widget_bloguin_link_box_widget {
+	display: none;
+
+	@include media($tablet-landscape) {
+		display: block;
+		float: left;
+		max-width: rem(380);
+		width: 47.5%;
+	}
+
+	@include media($breakpoint-1330) {
+		width: 50%;
+	}
+
+	.widget-title {
+		@extend .h6;
+
+		background: $color-mako;
+		color: $color-white;
+		letter-spacing: rem(1.5);
+		margin-bottom: 0;
+		margin-top: 0;
+		padding: rem(8) 0;
+		text-align: center;
+		text-transform: uppercase;
+	} // .widget-title
+
+	// Second linkbox widget, slightly tricky to target...
+	&:last-of-type {
+
+		@include media($tablet-landscape) {
+			float: right;
+		}
+	} // &:last-of-type
+
+	// The global styles for these have a set width, which we don't need for this section.
+	.link-box-content,
+	.link-box-thumb {
+		width: 100%;
+	} // .link-box-thumb, .link-box-content
+
+	.link-box-thumb {
+		height: rem(277);
+		margin-bottom: rem(12);
+
+		@include media($tablet-landscape) {
+			margin-bottom: rem(39);
+		}
+	} // .link-box-thumb
+
+	.link-box-item:last-child {
+		border-bottom: none;
+	} // .link-box-item:last-child
+} // .below-posts .widget_bloguin_link_box_widget

@@ -1,0 +1,100 @@
+//--------------------------------------------------------------
+// EmbedIt Pro by SuperThemes
+//
+// This plugin lets users create HTML snippets to display whatever they want.
+// The single post mockup has a block "Sponsored by MorningFinance" that will be done
+// with this plugin. However, since the possibilities are limitless, the main priority
+// for this file is to ensure some sane basic styles.
+//
+// The snippets don't get wrapped, and therefor the wrap class needs to be applied manually in the snippet
+// for these styles to become active.
+//
+// Basics are based on the block in the mockup and assume the whole thing is a link.
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// General link overrides (no italic)
+//-----------------------------------------
+.embed-block,
+a.embed-block {
+	font-style: normal;
+} // .embed-block, a.embed-block
+
+
+//-----------------------------------------
+// The Embed block itself, which has a border and some padding.
+//-----------------------------------------
+.embed-block,
+a.embed-block {
+	border-bottom: rem(1) solid lighten($color-black, 80%);
+	display: block;
+	margin-bottom: rem(56);
+	margin-top: rem(77);
+
+	@include media($tablet-landscape) {
+		margin-bottom: rem(38);
+		margin-top: rem(60);
+	}
+} // .embed-block, a.embed-block
+
+
+//-----------------------------------------
+// Block "header"
+//-----------------------------------------
+.embed-block {
+	.header {
+		border-bottom: rem(1) solid lighten($color-black, 80%);
+		display: block;
+		font-size: rem(20);
+		margin-bottom: rem(23);
+		padding-bottom: rem(8);
+
+		@include media($tablet-landscape) {
+			font-size: rem(16);
+		}
+	} // .header
+} // .embed-block
+
+
+//-----------------------------------------
+// Block "headings" (bold, uppercased text)
+// I don't really want to allow using actual headings here...
+//-----------------------------------------
+.embed-block {
+	h2,
+	.h2,
+	h3,
+	.h3 {
+		display: block;
+		font-size: rem(30);
+		letter-spacing: rem(1.8);
+		line-height: 1;
+		margin: rem(13) 0 rem(31);
+		text-transform: uppercase;
+
+		@include media($tablet-landscape) {
+			font-size: rem(24);
+			margin: rem(16) 0 rem(23);
+		}
+	} // h2, .h2, h3, .h3
+} // .embed-block
+
+
+//-----------------------------------------
+// Paragraph font size adjustments
+//-----------------------------------------
+.embed-block {
+	p {
+		font-size: rem(16);
+		margin-bottom: rem(32);
+
+		@include media($phone-landscape) {
+			font-size: rem(24);
+		}
+
+		@include media($tablet-landscape) {
+			font-size: rem(16);
+			margin-bottom: rem(36);
+		}
+	} // p
+} // .embed-block

@@ -1,0 +1,31 @@
+/*
+Theme Name: Acme Media
+Theme URI: http://acme.com
+Author: WebDevStudios
+Author URI: https://webdevstudios.com
+Description: A spiffy new theme for Acme Media by WebDevStudios based on wd_s.
+Version: 1.3.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: acme
+Tags: custom
+
+This theme, like WordPress, is licensed under the GPL.
+
+Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+
+*/
+
+@import "../bourbon/bourbon";
+@import "utilities/variables/index";
+@import "../neat/neat";
+@import "utilities/mixins/index";
+//@import "../bower_components/normalize-css/normalize.css";
+//@import "../bower_components/animate.css/animate.css";
+
+@import "base/index";
+@import "structure/index";
+@import "modules/index";
+@import "plugins/index";
+@import "views/index";
+@import "widgets/index";

@@ -1,0 +1,26 @@
+//--------------------------------------------------------------
+// Archive template
+// - Styling for MLB, NFL, etc. Category Landing pages.
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Archive Landing page
+//-----------------------------------------
+.archive {
+	// Container for Page title.
+	.page-header {
+		margin-bottom: rem(45);
+		margin-top: rem(41);
+	} // .page-header
+
+	// Title before Featured Grid
+	.page-title {
+		letter-spacing: rem(1);
+		text-align: center;
+		text-transform: uppercase;
+
+		@include media($tablet-landscape) {
+			font-size: rem(38);
+		}
+	} // .page-title
+} // .archive

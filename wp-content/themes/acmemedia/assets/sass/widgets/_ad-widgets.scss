@@ -1,0 +1,76 @@
+//--------------------------------------------------------------
+// Ad widget sections, like the one at the top of the page and the ad that appears in the river of posts.
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Center ad widgets
+//-----------------------------------------
+.ad-widget {
+	margin-left: auto;
+	margin-right: auto;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	} // &:last-child
+} // .ad-widget
+
+
+//-----------------------------------------
+// Ad section at the top of the page
+//-----------------------------------------
+.top-ad-section {
+	margin-bottom: rem(21);
+	margin-top: rem(25);
+
+	@include media($tablet-landscape) {
+		margin-bottom: rem(22);
+		margin-top: rem(30);
+	}
+
+	.ad-widget {
+		max-width: rem(970);
+	} // .ad-widget
+} // .top-ad-section
+
+
+//-----------------------------------------
+// In-river ads
+//-----------------------------------------
+.in-river-ads {
+	margin: rem(35) 0;
+
+	.ad-widget {
+		max-width: rem(728);
+	} // .ad-widget
+} // .in-river-ads
+
+
+//-----------------------------------------
+// Above posts ads
+//-----------------------------------------
+.above-posts-ads {
+	margin-bottom: rem(27);
+	margin-top: rem(7);
+
+	@include media($tablet-landscape) {
+		margin-bottom: rem(28);
+	}
+
+	.ad-widget {
+		max-width: rem(728);
+	} // .ad-widget
+} // .above-posts-ads
+
+
+//-----------------------------------------
+// Below content ads
+//-----------------------------------------
+.below-content {
+	.ad-widget {
+		max-width: rem(970);
+	} // .ad-widget
+} // .below-content

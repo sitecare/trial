@@ -1,0 +1,28 @@
+// ----------------------------------------------------------------------
+// Prevent text flickering in Safari.
+// ----------------------------------------------------------------------
+
+////
+/// @author Cameron Campbell
+/// @group wds
+////
+
+/// Uses a combination of font-smoothing, backface, and transform to prevent text flicker on transformed elements.
+///
+/// @example scss - Basic Usage Sass
+///    .foo {
+///        @include backface-reset;
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .foo {
+///         -webkit-font-smoothing: antialiased;
+///			backface-visibility: hidden;
+///			transform-style: preserve-3d;
+///    }
+
+@mixin backface-reset {
+	-webkit-font-smoothing: antialiased;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}

@@ -1,0 +1,39 @@
+//--------------------------------------------------------------
+// Category Labels
+//--------------------------------------------------------------
+
+// Base styles for Category Labels/Tags.
+.cat-links {
+	display: inline-block;
+
+	a {
+		@extend .h4;
+
+		background: $color-nfl;
+		border: none;
+		color: $color-white;
+		display: inline-block;
+		font-size: rem(18);
+		font-style: normal;
+		letter-spacing: rem(2);
+		padding: rem(1) rem(16);
+		text-transform: uppercase;
+		transition: opacity 0.18s ease-out;
+
+		// Loop through all category colors.
+		@each $category-colors, $color in $category-colors {
+
+			// Set styles on the tags.
+			&[href*="#{$category-colors}"] {
+				background: $color;
+			} // a-#{$category-colors}
+		} // end each loop
+
+		// Simply reduce opacity on hover for better UX.
+		&:hover,
+		&:focus {
+			color: $color-white;
+			opacity: 0.78;
+		} // &:hover, &:focus
+	} // a
+} // .cat-links

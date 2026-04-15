@@ -1,0 +1,149 @@
+//--------------------------------------------------------------
+// Buttons
+//--------------------------------------------------------------
+
+// Default button style, this one is yellow.
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	appearance: none;
+	border: none;
+	border-radius: $border-radius;
+	border-width: 0;
+	color: $color-button-text;
+	display: inline-block;
+	font-family: $font-sans;
+	font-size: rem(18);
+	font-weight: 600;
+	letter-spacing: rem(1);
+	line-height: 1.45;
+	margin: 0;
+	padding: rem(11) rem(28);
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: opacity 0.18s ease-out;
+
+	// IE 11 helper.
+	.ie & {
+		height: rem(48);
+	} // .ie &
+
+	// Set a visited style to prevent dark text
+	&:visited {
+		color: $color-white;
+	} // &:visited
+} // .button, button, input[type="button"], input[type="reset"], input[type="submit"]
+
+
+//-----------------------------------------
+// Alternative button syles
+//-----------------------------------------
+.button {
+	&-primary {
+		background-color: $color-corn;
+
+		&:hover {
+			background-color: $color-saffron-mango;
+			color: $color-white;
+		} // &:hover
+
+		&:active,
+		&:focus {
+			background-color: $color-saffron-mango;
+			color: $color-white;
+		} // &:active, &:focus
+
+	} // &-primary
+
+	// This is a dark variant of the button.
+	&-secondary {
+		background-color: $color-ship-gray;
+
+		&:hover {
+			background-color: $color-scarpa-flow;
+		} // &:hover
+
+		&:active,
+		&:focus {
+			background-color: $color-scarpa-flow;
+		} // &:active, &:focus
+	} // &-secondary
+
+	// This is a button style with a transparent background and a border style.
+	&-outline {
+		background: transparent;
+		border: rem(2) solid $color-ship-gray;
+		color: $color-ship-gray;
+		padding: rem(9) rem(26);
+		transition: background-color 0.18s ease-out, color 0.18s ease-out;
+
+		&:hover,
+		&:visited:hover {
+			background-color: $color-ship-gray;
+			color: $color-white;
+		} // &:hover
+
+		&:active,
+		&:focus,
+		&:visited:active,
+		&:visited:focus {
+			background-color: $color-ship-gray;
+			color: $color-white;
+		} // &:active, &:focus
+
+		// This button style needs to retain dark text when visited.
+		&:visited {
+			color: $color-ship-gray;
+		} // &:visited
+	} // &-outline
+} // .button
+
+//-----------------------------------------
+// Header search form button
+//-----------------------------------------
+// The search button is white with an svg icon on it.
+// Needs to also be positioned flush against the input field.
+.search-form {
+	button {
+		background: $color-white;
+		border: rem(1) solid $color-iron;
+		border-left: none;
+		border-radius: 0;
+		line-height: .8;
+		padding: 0 rem(7);
+
+		@include media($tablet-landscape) {
+			margin-right: rem(5);
+		}
+
+		svg {
+			@include size(rem(19) rem(18));
+
+			fill: $color-dusk;
+		} // svg
+
+		&:hover {
+			background-color: $color-saffron-mango;
+
+			svg {
+				fill: $color-white;
+			} // svg
+		} // &:hover
+
+		&:active,
+		&:focus {
+			background-color: $color-saffron-mango;
+
+			svg {
+				fill: $color-white;
+			} // svg
+		} // &:active, &:focus
+
+		// This button won't need the height helper.
+		.ie & {
+			height: auto;
+		} // .ie &
+	} // button
+} // .search-form

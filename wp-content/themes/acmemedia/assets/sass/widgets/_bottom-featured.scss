@@ -1,0 +1,111 @@
+//--------------------------------------------------------------
+// Styles for the "Bottom Featured" widgets and widget area.
+//--------------------------------------------------------------
+
+.below-content {
+	margin-bottom: rem(57);
+
+	@include media($tablet-portrait) {
+		margin-bottom: rem(57);
+	}
+
+	.featured {
+		@extend .clear;
+		@include backface-reset;
+	} // .featured
+} //. below-content
+
+
+//-----------------------------------------
+// The "More Reading" clone split helper widget
+//-----------------------------------------
+.csh-widget {
+	.widget-title {
+		font-size: rem(36);
+		margin-bottom: rem(32);
+		text-align: center;
+
+		@include media($tablet-portrait) {
+			font-size: rem(28);
+			margin-bottom: rem(35);
+			text-align: left;
+		}
+	} // .widget-title
+} // .csh-widget
+
+
+//-----------------------------------------
+// Styling for articles listed by the More Reading clone split helper widget
+//-----------------------------------------
+.below-content .csh-widget,
+.below-posts .csh-widget {
+	margin-bottom: rem(65);
+
+	@include media($tablet-portrait) {
+		margin-bottom: rem(68);
+	}
+
+	.featured {
+		h4 {
+			@include backface-reset;
+
+			letter-spacing: 0;
+			line-height: 1.25;
+			text-transform: none;
+		} // h4
+	} // .featured
+
+	.more-reading-article {
+		@include size(100% rem(185));
+
+		border-bottom: none;
+		display: block;
+		float: left;
+		margin-bottom: rem(25);
+
+		@include media($tablet-portrait) {
+			height: rem(352);
+			margin-right: rem(20);
+			width: calc(50% - 20px);
+		}
+
+		@include media($tablet-landscape) {
+			@include size(calc(25% - 15px) rem(198));
+
+			margin-bottom: 0;
+			max-width: rem(300);
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+			margin-right: 0;
+		} // &:last-child
+
+		// Article title
+		h4 {
+			@include position(absolute, null null 0 0);
+
+			color: $color-white;
+			font-style: normal;
+			margin: 0;
+			padding: rem(10);
+			width: 100%;
+			z-index: 1;
+
+			@include media($tablet-landscape) {
+				font-size: rem(19);
+			}
+		} // h4
+	} // .more-reading-article
+
+} // .below-content .csh-widget, .below-posts .csh-widget
+
+
+//-----------------------------------------
+// Other Widget(s)
+//-----------------------------------------
+.below-content {
+	&:last-child {
+		margin-bottom: 0;
+	} // &:last-content
+} // .below-content

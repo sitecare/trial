@@ -1,0 +1,97 @@
+{
+    "key": "group_59fa265e50cb2",
+    "title": "Attachment Syndication Rights",
+    "fields": [
+        {
+            "key": "field_59fa26817f129",
+            "label": "Has Syndication Rights",
+            "name": "has_syndication_rights",
+            "type": "true_false",
+            "instructions": "Set this to true if we have rights for the images provided in the feed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a00658978f78",
+            "label": "Licensor ID",
+            "name": "licensor_id",
+            "type": "text",
+            "instructions": "Use this field to enter the licensor ID if we do not have syndication rights for the image.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59fa26817f129",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a0065b478f79",
+            "label": "Licensor Name",
+            "name": "licensor_name",
+            "type": "text",
+            "instructions": "Use this field to enter the licensor Name if we do not have syndication rights for the image.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59fa26817f129",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "attachment",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1512409890
+}

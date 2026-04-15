@@ -1,0 +1,209 @@
+//--------------------------------------------------------------
+// Header
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Site Title
+//-----------------------------------------
+.site-title {
+	font-size: rem(48);
+} // .site-title
+
+
+//-----------------------------------------
+// Site Description
+//-----------------------------------------
+.site-description {
+	font-size: rem(24);
+	margin: 0 0 rem(24) 0;
+} // .site-description
+
+
+//-----------------------------------------
+// Site Header section
+//-----------------------------------------
+.site-header {
+	background: $color-dusk;
+	margin-top: rem(22);
+	padding-bottom: rem(14);
+	position: relative;
+	transition: bottom 0.75s ease-in-out;
+	width: 100%;
+	z-index: 100;
+
+	@include media($breakpoint-500) {
+		padding-bottom: 0;
+	}
+
+	@include media($tablet-landscape) {
+		@include position(relative, null null 0 null);
+
+		margin-top: 0;
+	}
+
+	// Fix the logo to the bottom, but only if the viewport is tall enough
+	@include media(min-height $breakpoint-500 max-width $breakpoint-1023) {
+		/*bottom: rem(69);
+		padding-bottom: rem(5);
+		position: fixed;*/
+	}
+
+	.fixed-header & {
+		@include media($tablet-landscape) {
+			@include position(fixed, 0 null null null);
+			@include size(100% rem(65));
+
+			background: $color-slate;
+		}
+	} // .fixed-header &
+
+	// Compensate for admin bar.
+	.admin-bar.fixed-header & {
+		@include media($tablet-landscape) {
+			top: rem(32);
+		}
+	} // .logged-in.fixed-heaer &
+
+	// Move the logo/search down when the tapbar does
+	&.tapbar-hidden {
+		bottom: -100%;
+	} // &.tapbar-hidden
+
+} // .site-header
+
+
+//-----------------------------------------
+// Search form in header
+//-----------------------------------------
+.site-header {
+	.search-form {
+		justify-content: center;
+		margin: rem(14) 0 0;
+		padding: rem(10) 0;
+
+		@include media($breakpoint-500) {
+			justify-content: flex-end;
+			padding-right: rem(5);
+		}
+
+		@include media($tablet-landscape) {
+			float: right;
+			margin: rem(11) rem(20) rem(6) 0;
+			padding-bottom: 0;
+			padding-top: 0;
+		}
+
+		// When the header is fixed, adjust the form's positioning
+		@include media(min-height $breakpoint-500 max-width $breakpoint-1023) {
+			justify-content: flex-end;
+			margin-top: rem(5);
+			padding-bottom: 0;
+			padding-right: rem(5);
+			padding-top: 0;
+		}
+
+		.fixed-header & {
+
+			@include media($tablet-landscape) {
+				margin: 0;
+			}
+		} // .fixed-header &
+	} // .search-form
+} // .site-header
+
+
+//-----------------------------------------
+// Site Branding section
+//-----------------------------------------
+.site-branding {
+	display: block;
+	z-index: 1;
+
+	@include media($breakpoint-500) {
+		@include position(absolute, rem(-32) null null rem(20));
+	}
+
+	@include media($tablet-landscape) {
+		margin-top: 0;
+		top: rem(9);
+	}
+
+	// When the header is fixed, adjust the logo in size.
+	@include media(min-height $breakpoint-500 max-width $breakpoint-1023) {
+		@include position(absolute, rem(-18) null null rem(5));
+
+		z-index: 101;
+
+		.mobile-menu-more & {
+			z-index: 101;
+		} // .mobile-menu-more &
+	}
+
+	.fixed-header & {
+		@include media($tablet-landscape) {
+			top: 0;
+		}
+	} // .fixed-header &
+} // .site-branding
+
+
+//-----------------------------------------
+// Custom Logo
+//-----------------------------------------
+.site-branding {
+	.custom-logo-link {
+		border-bottom: none;
+		display: block;
+		max-height: rem(105);
+		padding-top: rem(7);
+		text-align: center;
+
+		@include media($tablet-landscape) {
+			padding-top: 0;
+		}
+
+		img {
+			max-height: rem(105);
+			width: auto;
+
+			// Resize the logo while it is fixed to the bottom.
+			@include media(min-height $breakpoint-500 max-width $breakpoint-1023) {
+				max-height: rem(68);
+			}
+
+			.fixed-header & {
+				@include media($tablet-landscape) {
+					max-height: rem(65);
+				}
+			} // .fixed-header &
+		} // img
+
+		.fixed-header & {
+			@include media($tablet-landscape) {
+				max-height: rem(65);
+			}
+		} // .fixed-header &
+	} // .custom-logo-link
+} // .site-branding
+
+
+//-----------------------------------------
+// Site navigation wrap (main nav, social icons)
+//-----------------------------------------
+.site-navigation-wrap {
+	@include position(absolute, rem(5) null null null);
+	@include transition(top 0.18s ease-in-out);
+
+	background: $color-slate;
+	clear: both;
+	position: relative;
+
+	.fixed-header & {
+		@include media($tablet-landscape) {
+			@include position(absolute, 0 null null null);
+
+			width: 100%;
+			z-index: -1; // To ensure the search field is still usable.
+		}
+	} // .fixed-header &
+} // .site-navigation-wrap

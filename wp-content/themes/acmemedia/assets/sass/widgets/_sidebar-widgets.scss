@@ -1,0 +1,301 @@
+//--------------------------------------------------------------
+// Sidebar Widgets
+//
+// Contains styling for the following sidebar widgets:
+//
+// 400px Video Ad.
+// 300px Ads.
+// Clone widget (Popular Posts).
+// Link Boxe widgets.
+//
+// Sass Lint: There's an error thrown for using
+// .widget_bloguin_link_box_widget class, but it's what's in
+// their plugins and functions.
+//
+// @TODO: Perhaps we can update class names in plugins if
+// 		  we have extra time.
+//
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// The Global Sidebar.
+//-----------------------------------------
+.secondary {
+	// Contains single widget for each aside.
+	aside {
+		margin: rem(38) auto; // Center the ads.
+		max-width: 100%; // Make sure we don't go over.
+		width: rem(300); // size of our ads.
+
+		&:first-of-type {
+			margin-bottom: rem(38);
+			margin-top: 0;
+			max-width: 100%;
+			width: rem(400);
+		} // &:first-of-type
+
+		&.clone-widget,
+		&.widget_bloguin_link_box_widget {
+			width: 100%; // We want the big Video ad and Clone widgets to be full width.
+		} // &:first-of-type, &.clone-widget, &.widget_bloguin_link_box_widget
+	} // aside
+
+	// Generic Sidebar widget.
+	.widget {
+
+		// Only target Sidebar widget titles (not footer).
+		.widget-title {
+			@extend .h5;
+
+			background: $color-mako;
+			color: $color-white;
+			font-size: rem(24);
+			letter-spacing: rem(1.5);
+			line-height: 2;
+			margin-bottom: rem(28);
+			margin-left: rem(-10); // Helper for full width appearance on mobile.
+			text-align: center;
+			text-transform: uppercase;
+			width: calc(100% + 20px);
+
+			@include media($tablet-landscape) {
+				font-size: rem(20);
+				line-height: 2.4;
+				margin-left: 0; // No longer need mobile helper for full width.
+				width: 100%;
+			}
+		} // .widget-title
+	} // .widget
+} //.secondary
+
+//-----------------------------------------
+// Clone widget, controls the popular posts.
+//-----------------------------------------
+.clone-widget {
+
+	// Contains the clone post content
+	.featuredsidebar {
+		@include margin-auto;
+
+		width: 100%;
+
+		@include media($phone-landscape) {
+			padding: 0 rem(50);
+		}
+
+		@include media($tablet-landscape) {
+			padding: 0;
+			width: rem(300);
+		}
+
+		// Featured Thumbnail Image.
+		.image-as-background {
+			@extend .card-image;
+			@include position(relative, null);
+
+			border: none;
+			display: block;
+			margin-bottom: rem(20);
+			min-height: rem(200);
+
+			@include media($phone-landscape) {
+				min-height: rem(306);
+			}
+
+			@include media($tablet-landscape) {
+				margin-bottom: rem(25);
+				min-height: rem(200);
+			}
+
+			// Add a gradient background over the featured image,
+			// so that the white text will be readable regardless of what is in said image.
+			&::after {
+				@include position(absolute, 0 0 null null);
+				@include size(100% 100%);
+
+				background: linear-gradient(rgba($color-thunder, 0) 48%, rgba($color-thunder, 1) 95%, rgba($color-thunder, 1) 96%);
+				content: "";
+				z-index: 2;
+			} // &::after
+
+			// Full background overlay, will only be visible on hover.
+			&::before {
+				@include position(absolute, 0 0 null null);
+				@include size(100% 100%);
+				@include transition(opacity 0.18s ease-in-out);
+
+				background: linear-gradient(to bottom, rgba($color-thunder, 0.7) 48%, rgba($color-thunder, 1) 95%, rgba($color-thunder, 1) 96%);
+				content: "";
+				opacity: 0;
+				z-index: 1;
+			}
+
+			h4 {
+				@include position(absolute, null null 0 null);
+
+				color: $color-white;
+				font-size: rem(20);
+				font-style: normal;
+				letter-spacing: 0;
+				line-height: 1.15;
+				margin-bottom: rem(10);
+				padding: 0 rem(4) 0 rem(12);
+				text-transform: none;
+				transition: color 0.18s ease-out;
+				z-index: 4;
+
+				@include media($tablet-landscape) {
+					font-size: rem(18);
+				}
+			} // h4
+
+			&:hover,
+			&:focus {
+				&::before {
+					opacity: 0.5;
+				} // &::before
+			} // &:hover, &:focus
+		} // .image-as-background
+	} // .featuredsidebar
+} // .clone-widget
+
+//-----------------------------------------
+// Link box styles, e.g. 'The Good Stuff'
+//-----------------------------------------
+.link-box {
+
+	// Container that houses the linkbox content.
+	.link-box-content {
+		@include margin-auto;
+
+		width: 100%;
+
+		@include media($phone-landscape) {
+			padding: 0 rem(50);
+		}
+
+		@include media($tablet-landscape) {
+			padding: 0;
+			width: rem(300);
+		}
+	} // .link-box-content
+
+	// The Featured Thumb at the top of the link box.
+	.link-box-thumb {
+		height: rem(292);
+		margin-bottom: rem(27);
+		width: 100%;
+
+		@include media($tablet-landscape) {
+			height: rem(200);
+		}
+	} // .link-box-thumb
+
+	// The list of text links in the sidebar.
+	.link-box-list {
+		@include margin-padding-reset;
+		@include list-reset;
+
+		// An individual link item/text.
+		.link-box-item {
+			line-height: 1.35;
+			margin: rem(-3) 0 rem(23) 0;
+
+			// The anchor link of the linkbox link.
+			.link-box-link {
+				@include transition(color 0.18s ease-in-out, border-bottom 0.18s ease-in-out);
+
+				border-bottom: rem(2) solid $color-french-gray;
+				display: block;
+				font-family: $font-sans;
+				font-size: rem(20);
+				font-style: normal;
+				font-weight: 600;
+				padding-bottom: rem(13);
+
+				@include media($tablet-landscape) {
+					font-size: rem(18);
+				}
+
+				&:hover,
+				&:focus {
+					border-bottom-color: $color-buttercup;
+				} // &:hover, &:focus
+
+			} // .link-box-link
+		} // .link-box-item
+	} // .link-box-list
+} // .link-box
+
+//-----------------------------------------
+// Link Box Presentational Classes Set Via Admin.
+//
+// Requires some breakpoint-wranging to look correct.
+//-----------------------------------------
+.link-box-third {
+	width: 32%;
+	
+	@include media($phone-landscape) {
+		width: 44%;
+	}
+
+	@include media($tablet-landscape) {
+		width: 50%;
+	}
+
+	@include media($desktop) {
+		width: 34%;
+	}
+
+	.link-box-thumb {
+		height: rem(100);
+
+		@include media($breakpoint-700) {
+			height: rem(160);
+		}
+
+		@include media($tablet-landscape) {
+			height: rem(200);
+		}
+	}
+	
+	.widget-title {
+		font-size: rem(22);
+		line-height: 1.2;
+		text-align: center;
+
+		@include media($tablet-portrait) {
+			font-size: rem(24);
+			line-height: 2;
+		}
+
+		@include media($tablet-landscape) {
+			text-align: left;
+		}
+	} // .widget-title
+	
+	.link-box-list .link-box-item {
+		font-size: rem(14);
+		line-height: 1;
+
+		// The anrchor link of the linkbox link.
+		.link-box-link {
+			font-size: rem(15);
+
+			@include media($tablet-portrait) {
+				font-size: rem(26);
+			}
+		} // .link-box-link
+
+		@include media($tablet-portrait) {
+			line-height: 1.35;
+		}
+	} // .link-box-item
+} // .link-box-third
+
+//-----------------------------------------
+// Custom WDS widgets that contain ad code.
+//-----------------------------------------
+.ad-widget {
+	margin-top: rem(20);
+} // .ad-widget

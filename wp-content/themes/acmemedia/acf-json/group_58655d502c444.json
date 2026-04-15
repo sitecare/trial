@@ -1,0 +1,39 @@
+{
+    "key": "group_58655d502c444",
+    "title": "Category Options",
+    "fields": [
+        {
+            "default_value": "",
+            "key": "field_58655d5709b5d",
+            "label": "Category Colors",
+            "name": "acme_category_colors",
+            "type": "color_picker",
+            "instructions": "Please select a color for this category. It will be used to style different category-elements throughout the theme.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1483038145
+}

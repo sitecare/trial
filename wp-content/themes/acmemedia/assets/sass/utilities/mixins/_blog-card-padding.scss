@@ -1,0 +1,29 @@
+// ----------------------------------------------------------------------
+// Padding mixing for the Horizontal Blog Cards.
+// ----------------------------------------------------------------------
+
+////
+/// @author Cameron Campbell
+/// @group wds
+////
+
+/// Simply adds the correct padding to blog card contents since
+/// we're not able to use a container div to control that.
+///
+/// @example scss - Basic Usage Sass
+///    .foo {
+///        @include blog-card-padding;
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .foo {
+///         padding: 0 0 0 20rem;
+///    }
+
+@mixin blog-card-padding {
+	padding: 0 rem(8);
+
+	@include media($tablet-portrait) {
+		padding: 0 0 0 rem(20);
+	}
+}
